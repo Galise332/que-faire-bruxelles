@@ -62,7 +62,7 @@ Si tu as trouvé un **email de contact sur le site officiel** (jamais deviné, j
 >
 > Bonne journée,
 > Mourad – Ascension
-> contact@ascensionagency.fr · 0470 78 04 01
+> contact@ascensionagency.fr
 >
 > Si vous ne souhaitez plus recevoir de message de notre part, répondez simplement « stop ».
 
