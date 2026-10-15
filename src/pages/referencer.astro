@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+const mail = 'mailto:contact@ascensionagency.fr?subject=' + encodeURIComponent('Référencer mon établissement sur Que faire à Bruxelles');
+---
+<Base title="Référencer mon établissement" description="Faites parler de votre restaurant, bar ou activité à Bruxelles : article dédié, place dans nos tops, visibilité durable.">
+  <h1>Référencer mon établissement</h1>
+  <p>Que faire à Bruxelles publie un article par jour sur une adresse de la ville. Les lecteurs viennent chercher une idée de sortie ; un article bien référencé sur Google travaille pour vous pendant des années.</p>
+
+  <h2>Les offres</h2>
+  <div class="infos">
+    <div><strong>Article dédié — 150 € HTVA</strong><br />Un article complet sur votre établissement (texte rédigé par nous, relu par vous), lien vers votre site et Google Maps, en ligne pour toujours.</div>
+  </div>
+  <div class="infos">
+    <div><strong>Place dans un top — 90 € HTVA</strong><br />Votre adresse ajoutée dans un de nos tops thématiques (« Top 10 des brunchs », « Top 5 des activités sous la pluie »…), avec lien.</div>
+  </div>
+  <div class="infos">
+    <div><strong>Pack visibilité — 390 € HTVA</strong><br />Article dédié + mention dans 2 tops + 1 vidéo Reel tournée chez vous, publiée sur nos réseaux et livrée pour les vôtres.</div>
+  </div>
+
+  <h2>Comment ça marche</h2>
+  <ol>
+    <li>Vous nous écrivez avec le nom de l'établissement.</li>
+    <li>On vous envoie le texte sous 5 jours ouvrés, vous corrigez ce que vous voulez.</li>
+    <li>Publication, facture à 30 jours.</li>
+  </ol>
+  <p>Les articles partenaires sont signalés comme tels. On ne publie pas d'avis inventés.</p>
+
+  <div class="cta">
+    <p><strong>On en parle ?</strong></p>
+    <p><a href={mail}>contact@ascensionagency.fr</a> · 0470 78 04 01</p>
+  </div>
+</Base>

@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { CATEGORIES } from '../content.config';
+export async function getStaticPaths() {
+  return (await getCollection('articles')).map(a => ({ params: { slug: a.id }, props: { a } }));
+}
+const { a } = Astro.props;
+const { Content } = await render(a);
+const base = import.meta.env.BASE_URL;
+const d = a.data;
+const prettyUrl = (u: string) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+---
+<Base title={d.title} description={d.description}>
+  <span class="tag">{CATEGORIES[d.category]}</span>
+  <h1>{d.title}</h1>
+  <p class="meta">Publié le {d.date.toLocaleDateString('fr-BE', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+  {d.sponsored && <p class="sponsored">Article réalisé en partenariat avec l'établissement.</p>}
+  {(d.address || d.website || d.maps) && (
+    <div class="infos">
+      {d.address && <div>📍 {d.address}</div>}
+      {d.website && <div>🌐 <a href={d.website} rel="nofollow noopener">{prettyUrl(d.website)}</a></div>}
+      {d.maps && <div>🗺️ <a href={d.maps} rel="noopener">Voir sur Google Maps</a></div>}
+    </div>
+  )}
+  <Content />
+  <div class="cta">
+    <p><strong>Vous tenez un établissement à Bruxelles ?</strong></p>
+    <p>On publie un article dédié, lu par des Bruxellois qui cherchent où sortir. <a href={`${base}referencer/`}>Voir l'offre</a></p>
+  </div>
+</Base>

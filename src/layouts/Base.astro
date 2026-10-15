@@ -1,0 +1,60 @@
+---
+import { CATEGORIES } from '../content.config';
+const { title, description = 'Les bonnes adresses de Bruxelles : restaurants, bars, activités et sorties, un article par jour.' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title} · Que faire à Bruxelles</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="article" />
+  <link rel="alternate" type="application/rss+xml" title="Que faire à Bruxelles" href={`${base}rss.xml`} />
+  <style>
+    :root { --ink:#1a1a1a; --muted:#6b6b6b; --accent:#D96040; --bg:#fffdf9; --line:#e8e3da; }
+    * { box-sizing:border-box }
+    body { margin:0; font:17px/1.6 Georgia, 'Times New Roman', serif; color:var(--ink); background:var(--bg) }
+    a { color:var(--accent) }
+    header, main, footer { max-width:760px; margin:0 auto; padding:0 16px }
+    header { padding-top:28px; padding-bottom:12px; border-bottom:2px solid var(--ink) }
+    header .brand { font-size:26px; font-weight:bold; text-decoration:none; color:var(--ink); letter-spacing:-.5px }
+    nav { display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:10px; font:15px system-ui, sans-serif }
+    nav a { color:var(--muted); text-decoration:none } nav a:hover { color:var(--accent) }
+    main { padding:28px 16px 48px }
+    h1 { font-size:34px; line-height:1.15; margin:.2em 0 .4em }
+    h2 { font-size:24px; margin-top:1.6em }
+    .meta { font:14px system-ui, sans-serif; color:var(--muted) }
+    .tag { display:inline-block; font:12px system-ui, sans-serif; text-transform:uppercase; letter-spacing:.08em; color:var(--accent) }
+    .card { padding:18px 0; border-bottom:1px solid var(--line) }
+    .card h3 { margin:4px 0 6px; font-size:22px } .card h3 a { color:var(--ink); text-decoration:none } .card h3 a:hover { color:var(--accent) }
+    .card p { margin:0 }
+    .infos { font:15px system-ui, sans-serif; background:#fff; border:1px solid var(--line); padding:14px 18px; margin:24px 0 }
+    .infos div { margin:4px 0 }
+    .sponsored { font:13px system-ui, sans-serif; color:var(--muted); border-left:3px solid var(--accent); padding-left:10px; margin:18px 0 }
+    .cta { background:var(--ink); color:#fff; padding:22px; margin-top:40px; font-family:system-ui, sans-serif }
+    .cta a { color:#fff } .cta p { margin:0 0 8px }
+    footer { font:14px system-ui, sans-serif; color:var(--muted); padding:20px 16px 40px; border-top:1px solid var(--line) }
+    img { max-width:100% }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href={base}>Que faire à Bruxelles</a>
+    <nav>
+      {Object.entries(CATEGORIES).map(([slug, label]) => <a href={`${base}categorie/${slug}/`}>{label}</a>)}
+      <a href={`${base}referencer/`}>Référencer mon établissement</a>
+    </nav>
+  </header>
+  <main><slot /></main>
+  <footer>
+    Un article par jour sur une adresse bruxelloise. Infos vérifiées au moment de la publication (horaires et prix peuvent changer).
+    · <a href={`${base}referencer/`}>Vous êtes un établissement ?</a> · Édité par <a href="https://www.ascensionagency.fr">Ascension</a> · <a href="mailto:contact@ascensionagency.fr">contact@ascensionagency.fr</a>
+  </footer>
+</body>
+</html>

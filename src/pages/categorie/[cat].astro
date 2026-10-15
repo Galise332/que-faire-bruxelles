@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { CATEGORIES, type Category } from '../../content.config';
+export function getStaticPaths() {
+  return Object.keys(CATEGORIES).map(cat => ({ params: { cat } }));
+}
+const cat = Astro.params.cat as Category;
+const base = import.meta.env.BASE_URL;
+const label = CATEGORIES[cat];
+const articles = (await getCollection('articles', a => a.data.category === cat)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title={`${label} à Bruxelles`} description={`${label} à Bruxelles : nos adresses vérifiées, une par jour.`}>
+  <h1>{label} à Bruxelles</h1>
+  {articles.length === 0 && <p>Bientôt.</p>}
+  {articles.map(a => (
+    <article class="card">
+      <h3><a href={`${base}${a.id}/`}>{a.data.title}</a></h3>
+      <p>{a.data.description}</p>
+    </article>
+  ))}
+</Base>

@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { CATEGORIES } from '../content.config';
+const base = import.meta.env.BASE_URL;
+const articles = (await getCollection('articles')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title="Les bonnes adresses de Bruxelles">
+  <h1>Que faire à Bruxelles ?</h1>
+  <p class="meta">Chaque jour, une adresse ou un top : restaurants, bars, activités, sorties. Des infos vérifiées, pas de blabla.</p>
+  {articles.map(a => (
+    <article class="card">
+      <span class="tag">{CATEGORIES[a.data.category]}</span>
+      <h3><a href={`${base}${a.id}/`}>{a.data.title}</a></h3>
+      <p>{a.data.description}</p>
+      <p class="meta">{a.data.date.toLocaleDateString('fr-BE', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+    </article>
+  ))}
+</Base>
