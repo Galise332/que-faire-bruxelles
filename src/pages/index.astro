@@ -4,16 +4,23 @@ import Base from '../layouts/Base.astro';
 import { CATEGORIES } from '../content.config';
 const base = import.meta.env.BASE_URL;
 const articles = (await getCollection('articles')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString('fr-BE', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
 <Base title="Les bonnes adresses de Bruxelles">
-  <h1>Que faire à Bruxelles ?</h1>
-  <p class="meta">Chaque jour, une adresse ou un top : restaurants, bars, activités, sorties. Des infos vérifiées, pas de blabla.</p>
-  {articles.map(a => (
-    <article class="card">
-      <span class="tag">{CATEGORIES[a.data.category]}</span>
-      <h3><a href={`${base}${a.id}/`}>{a.data.title}</a></h3>
-      <p>{a.data.description}</p>
-      <p class="meta">{a.data.date.toLocaleDateString('fr-BE', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
-    </article>
-  ))}
+  <section class="hero">
+    <span class="stamp">Nouveau chaque jour</span>
+    <h1>Que faire à Bruxelles ?</h1>
+    <p>Une adresse par jour : restaurants, bars, activités, sorties. Vérifiée, écrite par des Bruxellois, sans blabla. Allez.</p>
+  </section>
+
+  <div class="cards">
+    {articles.map(a => (
+      <a class="card" href={`${base}${a.id}/`}>
+        <span class:list={['tag', a.data.category]}>{CATEGORIES[a.data.category]}</span>
+        <h3>{a.data.title}</h3>
+        <p>{a.data.description}</p>
+        <p class="meta">{fmt(a.data.date)}{a.data.address && ` · ${a.data.address}`}</p>
+      </a>
+    ))}
+  </div>
 </Base>

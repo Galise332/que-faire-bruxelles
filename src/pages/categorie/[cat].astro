@@ -11,12 +11,16 @@ const label = CATEGORIES[cat];
 const articles = (await getCollection('articles', a => a.data.category === cat)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <Base title={`${label} à Bruxelles`} description={`${label} à Bruxelles : nos adresses vérifiées, une par jour.`}>
+  <span class:list={['tag', cat]}>{label}</span>
   <h1>{label} à Bruxelles</h1>
-  {articles.length === 0 && <p>Bientôt.</p>}
-  {articles.map(a => (
-    <article class="card">
-      <h3><a href={`${base}${a.id}/`}>{a.data.title}</a></h3>
-      <p>{a.data.description}</p>
-    </article>
-  ))}
+  {articles.length === 0 && <p class="lead">Rien encore ici. Ça arrive, un article par jour.</p>}
+  <div class="cards">
+    {articles.map(a => (
+      <a class="card" href={`${base}${a.id}/`}>
+        <h3>{a.data.title}</h3>
+        <p>{a.data.description}</p>
+        {a.data.address && <p class="meta">{a.data.address}</p>}
+      </a>
+    ))}
+  </div>
 </Base>
