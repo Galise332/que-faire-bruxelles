@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import { CATEGORIES, type Category } from '../../content.config';
 export function getStaticPaths() {
@@ -16,10 +17,13 @@ const articles = (await getCollection('articles', a => a.data.category === cat))
   {articles.length === 0 && <p class="lead">Rien encore ici. Ça arrive, un article par jour.</p>}
   <div class="cards">
     {articles.map(a => (
-      <a class="card" href={`${base}${a.id}/`}>
+      <a class:list={['card', { pic: !!a.data.image }]} href={`${base}${a.id}/`}>
+        {a.data.image && <Image class="thumb" src={a.data.image} alt="" width={480} height={360} format="webp" />}
+        <div>
         <h3>{a.data.title}</h3>
         <p>{a.data.description}</p>
         {a.data.address && <p class="meta">{a.data.address}</p>}
+        </div>
       </a>
     ))}
   </div>

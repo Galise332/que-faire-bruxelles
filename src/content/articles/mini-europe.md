@@ -6,6 +6,8 @@ category: activites
 address: "Bruparck, 1020 Bruxelles (Laeken)"
 website: "https://www.minieurope.com/"
 maps: "https://www.google.com/maps/search/?api=1&query=Mini-Europe+Bruparck+1020+Bruxelles"
+image: ./img/mini-europe.jpg
+image_credit: "Photo : Mini-Europe"
 ---
 
 On connaît la photo : le Big Ben à hauteur de genou avec les boules de l'Atomium derrière. Mini-Europe, c'est ça, mais sur un parcours qui prend facilement deux heures si on prend le temps de déclencher les animations disséminées le long des allées.

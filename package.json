@@ -2,6 +2,15 @@
   "name": "que-faire-bruxelles",
   "private": true,
   "type": "module",
-  "scripts": { "dev": "astro dev", "build": "astro build", "preview": "astro preview" },
-  "dependencies": { "astro": "^5.0.0", "@astrojs/rss": "^4.0.0", "@astrojs/sitemap": "^3.0.0" }
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "astro": "^5.0.0",
+    "sharp": "^0.35.5"
+  }
 }

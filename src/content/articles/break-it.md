@@ -7,6 +7,8 @@ address: "Rue de Flandre 73, 1000 Bruxelles"
 website: "https://www.break-it.be/"
 maps: "https://maps.app.goo.gl/kH8a8CxzkePj1VtS7"
 sponsored: true
+image: ./img/break-it.webp
+image_credit: "Photo : Break-it"
 ---
 
 À deux pas du marché aux poissons, derrière une devanture de la rue de Flandre, on entre dans un grand atelier de 100 m² où chaque table est déjà dressée : fioles et pipettes d'un côté, perles et pinces de l'autre, pains d'argile plus loin. Chez Break-it, on vient faire quelque chose de ses mains pendant une ou deux heures, et on repart avec.

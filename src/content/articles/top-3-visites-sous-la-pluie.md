@@ -3,6 +3,8 @@ title: "Top 3 : que faire à Bruxelles quand il pleut"
 description: "Trois sorties à l'abri, du centre à Schaerbeek en passant par le Heysel : Magritte, les trains et l'Atomium. Accessibles en métro."
 date: 2026-10-13
 category: tops
+image: ./img/top-3-visites-sous-la-pluie.jpg
+image_credit: "Photo : Atomium"
 ---
 
 Il pleut souvent à Bruxelles, ce n'est pas une raison pour rester chez soi. Trois adresses couvertes, accessibles en transports en commun, où on passe facilement deux heures.

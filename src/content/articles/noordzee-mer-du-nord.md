@@ -6,6 +6,8 @@ category: restaurants
 address: "Rue Sainte-Catherine 45, 1000 Bruxelles"
 website: "https://www.noordzeemerdunord.be/"
 maps: "https://www.google.com/maps/search/?api=1&query=Noordzee+Mer+du+Nord+Rue+Sainte-Catherine+45+1000+Bruxelles"
+image: ./img/noordzee-mer-du-nord.png
+image_credit: "Visuel : Noordzee – Mer du Nord"
 ---
 
 Il n'y a pas de salle, pas de réservation, pas de serveur qui vient prendre la commande. Chez Noordzee, on fait la file au comptoir, on choisit ses tapas de poisson sur l'ardoise, on commande un verre de blanc et on mange debout aux tables hautes, sur le trottoir de la rue Sainte-Catherine. C'est tout, et c'est précisément pour ça que l'adresse ne désemplit pas depuis des années.

@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
 import { CATEGORIES } from '../content.config';
 export async function getStaticPaths() {
   return (await getCollection('articles')).map(a => ({ params: { slug: a.id }, props: { a } }));
@@ -15,6 +16,7 @@ const prettyUrl = (u: string) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/
   <span class:list={['tag', d.category]}>{CATEGORIES[d.category]}</span>
   <h1>{d.title}</h1>
   <p class="meta">Publié le {d.date.toLocaleDateString('fr-BE', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+  {d.image && <figure class="photo"><Image src={d.image} alt={d.title} width={1200} format="webp" loading="eager" />{d.image_credit && <figcaption>{d.image_credit}</figcaption>}</figure>}
   {d.sponsored && <p class="sponsored">Article réalisé en partenariat avec l'établissement.</p>}
   {(d.address || d.website || d.maps) && (
     <div class="plaque">

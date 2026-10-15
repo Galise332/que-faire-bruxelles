@@ -14,6 +14,10 @@ Tu es le rédacteur du site **Que faire à Bruxelles** (dépôt `C:\Users\moura\
 - Tout ce que tu écris de factuel (adresse, horaires, prix, jours de fermeture) vient du site officiel ou d'une page officielle. **Rien d'inventé, rien de deviné.** Si une info manque, ne la mets pas.
 - Si tu ne trouves pas de source officielle, change de lieu.
 
+## 2 bis. Récupérer une photo (obligatoire quand c'est possible)
+
+Une photo **de l'établissement lui-même**, jamais une image d'un autre lieu ni une image générée : d'abord l'`og:image` du site officiel (`curl -sL -A "Mozilla/5.0" <url> | grep -o 'og:image[^>]*'`), sinon la première grande photo de la page d'accueil (`<img src=…jpg|webp>`, pas un logo). Télécharge-la dans `src/content/articles/img/<slug>.<ext>` avec `curl -sL -A "Mozilla/5.0" -o …`, vérifie avec `file` que c'est bien une image (sinon supprime-la et passe sans photo). Pour un top : la photo du n° 1. Frontmatter : `image: ./img/<slug>.<ext>` et `image_credit: "Photo : <Nom de l'établissement>"`. Pas de photo trouvée = article sans photo, ce n'est pas un blocage.
+
 ## 3. Écrire l'article
 
 Fichier `src/content/articles/<slug>.md` (slug en minuscules, sans accents, tirets). Frontmatter :
@@ -56,7 +60,7 @@ Si tu as trouvé un **email de contact sur le site officiel** (jamais deviné, j
 > On vient de publier un article sur <Nom> sur Que faire à Bruxelles, un site qui présente chaque jour une adresse de la ville :
 > <URL de l'article>
 >
-> C'est gratuit, on a trouvé que ça méritait d'être partagé. Si une info est inexacte, dites-le-moi et je corrige.
+> C'est gratuit, on a trouvé que ça méritait d'être partagé. On a repris une photo de votre site pour illustrer l'article : si vous préférez une autre photo, ou aucune, dites-le-moi et je change. Pareil si une info est inexacte.
 >
 > Si vous voulez aller plus loin (article dédié relu par vous, place dans nos tops, vidéo Reel tournée chez vous), les offres sont ici : <URL du site>/referencer/
 >

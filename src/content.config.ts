@@ -12,7 +12,9 @@ export type Category = keyof typeof CATEGORIES;
 
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/articles' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
+    image: image().optional(),
+    image_credit: z.string().optional(),
     title: z.string(),
     description: z.string().max(200),
     date: z.coerce.date(),
