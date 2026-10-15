@@ -46,7 +46,7 @@ git commit -m "Article : <titre>"
 git push origin main
 ```
 
-Le push déploie le site automatiquement (GitHub Pages). URL de l'article : `https://galise332.github.io/que-faire-bruxelles/<slug>/` (si `public/CNAME` existe, utiliser `https://<contenu du CNAME>/<slug>/`).
+Le push déploie le site automatiquement (GitHub Pages). URL de l'article : `https://quefairebruxelles.be/<slug>/`.
 
 ## 5. Prévenir l'établissement (fiches uniquement, pas les tops)
 
