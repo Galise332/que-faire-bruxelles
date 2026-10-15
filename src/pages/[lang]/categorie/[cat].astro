@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../../layouts/Base.astro';
+import { CATEGORIES, type Category } from '../../../content.config';
+import { LANG_CODES, T, type Lang } from '../../../i18n';
+export function getStaticPaths() {
+  return LANG_CODES.flatMap(lang => Object.keys(CATEGORIES).map(cat => ({ params: { lang, cat } })));
+}
+const lang = Astro.params.lang as Lang;
+const cat = Astro.params.cat as Category;
+const t = T[lang];
+const label = t.cats[cat];
+const title = t.inBrussels.replace('{cat}', label);
+const articles = (await getCollection('articles', a => a.id.startsWith(`${lang}/`) && a.data.category === cat)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const slug = (id: string) => id.slice(3);
+---
+<Base lang={lang} title={title} description={`${title} · ${t.rssDesc}`}>
+  <span class:list={['tag', cat]}>{label}</span>
+  <h1>{title}</h1>
+  {articles.length === 0 && <p class="lead">{t.empty}</p>}
+  <div class="cards">
+    {articles.map(a => (
+      <a class:list={['card', { pic: !!a.data.image }]} href={`/${lang}/${slug(a.id)}/`}>
+        {a.data.image && <Image class="thumb" src={a.data.image} alt="" width={480} height={360} format="webp" />}
+        <div>
+        <h3>{a.data.title}</h3>
+        <p>{a.data.description}</p>
+        {a.data.address && <p class="meta">{a.data.address}</p>}
+        </div>
+      </a>
+    ))}
+  </div>
+</Base>

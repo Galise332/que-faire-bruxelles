@@ -1,0 +1,72 @@
+---
+import Base from '../../layouts/Base.astro';
+import { PRO_LANGS, type Lang } from '../../i18n';
+export function getStaticPaths() { return PRO_LANGS.map(lang => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+
+const P = {
+  fr: {
+    tag: 'Pour les pros', h1: 'Référencer mon établissement',
+    lead: "Que faire à Bruxelles publie une adresse par jour, en 15 langues. Les lecteurs viennent chercher une idée de sortie ; un article bien référencé sur Google travaille pour vous pendant des années.",
+    offers: 'Les offres', htva: 'HTVA',
+    o1: ['Article dédié', '150 €', 'Un article complet sur votre établissement, rédigé par nous et relu par vous, traduit en 15 langues. Lien vers votre site et Google Maps. En ligne pour toujours.'],
+    o2: ['Pack visibilité', '390 €', 'Article dédié + mention dans 2 tops + 1 vidéo Reel tournée chez vous, publiée sur nos réseaux et livrée pour les vôtres.'],
+    o3: ['Place dans un top', '90 €', 'Votre adresse ajoutée dans un de nos tops thématiques (« Top 10 des brunchs », « Top 5 sous la pluie »…), avec lien.'],
+    how: 'Comment ça marche',
+    steps: ["Vous nous écrivez avec le nom de l'établissement.", 'On vous envoie le texte sous 5 jours ouvrés, vous corrigez ce que vous voulez.', 'Publication, facture à 30 jours.'],
+    note: "Les articles partenaires sont signalés comme tels. On ne publie pas d'avis inventés.",
+    talk: 'On en parle ?', write: 'Écrivez-nous à', reply: 'réponse sous 24 h en semaine.',
+    subject: 'Référencer mon établissement sur Que faire à Bruxelles',
+  },
+  nl: {
+    tag: 'Voor professionals', h1: 'Mijn zaak laten opnemen',
+    lead: 'Wat te doen in Brussel publiceert elke dag een adres, in 15 talen. Lezers zoeken een idee om uit te gaan; een artikel dat goed scoort op Google werkt jarenlang voor u.',
+    offers: 'Het aanbod', htva: 'excl. btw',
+    o1: ['Eigen artikel', '150 €', 'Een volledig artikel over uw zaak, door ons geschreven en door u nagelezen, vertaald in 15 talen. Link naar uw website en Google Maps. Blijft voor altijd online.'],
+    o2: ['Zichtbaarheidspakket', '390 €', 'Eigen artikel + vermelding in 2 tops + 1 Reel-video bij u opgenomen, gepubliceerd op onze kanalen en geleverd voor de uwe.'],
+    o3: ['Plaats in een top', '90 €', "Uw adres toegevoegd aan een van onze thematische tops ('Top 10 brunches', 'Top 5 bij regen'…), met link."],
+    how: 'Hoe werkt het',
+    steps: ['U mailt ons de naam van uw zaak.', 'Binnen 5 werkdagen krijgt u de tekst, u past aan wat u wilt.', 'Publicatie, factuur op 30 dagen.'],
+    note: 'Partnerartikelen worden als zodanig aangeduid. We publiceren geen verzonnen reviews.',
+    talk: 'Praten we erover?', write: 'Mail ons op', reply: 'antwoord binnen 24 u op werkdagen.',
+    subject: 'Mijn zaak opnemen op Wat te doen in Brussel',
+  },
+  en: {
+    tag: 'For businesses', h1: 'List my venue',
+    lead: 'What to do in Brussels publishes one address a day, in 15 languages. Readers come looking for somewhere to go; an article that ranks on Google keeps working for you for years.',
+    offers: 'Offers', htva: 'excl. VAT',
+    o1: ['Dedicated article', '€150', 'A full article about your venue, written by us and reviewed by you, translated into 15 languages. Links to your website and Google Maps. Online forever.'],
+    o2: ['Visibility pack', '€390', 'Dedicated article + mention in 2 top lists + 1 Reel video shot at your venue, published on our channels and delivered for yours.'],
+    o3: ['Spot in a top list', '€90', "Your venue added to one of our themed top lists ('Top 10 brunches', 'Top 5 rainy-day outings'…), with a link."],
+    how: 'How it works',
+    steps: ['Email us the name of your venue.', 'We send you the text within 5 working days, you change whatever you like.', 'Publication, invoice at 30 days.'],
+    note: 'Partner articles are labelled as such. We never publish made-up reviews.',
+    talk: 'Shall we talk?', write: 'Email us at', reply: 'reply within 24 h on weekdays.',
+    subject: 'List my venue on What to do in Brussels',
+  },
+}[lang as 'fr' | 'nl' | 'en'];
+const mail = 'mailto:contact@ascensionagency.fr?subject=' + encodeURIComponent(P.subject);
+---
+<Base lang={lang} title={P.h1} description={P.lead} langs={PRO_LANGS}>
+  <span class="tag tops">{P.tag}</span>
+  <h1>{P.h1}</h1>
+  <p class="lead">{P.lead}</p>
+
+  <h2>{P.offers}</h2>
+  <div class="offres">
+    {[P.o1, P.o2, P.o3].map(([h, price, text], i) => (
+      <div class:list={['offre', { star: i === 1 }]}>
+        <h3>{h}</h3>
+        <div class="prix">{price} <small>{P.htva}</small></div>
+        <p>{text}</p>
+      </div>
+    ))}
+  </div>
+
+  <h2>{P.how}</h2>
+  <ol class="steps">{P.steps.map(s => <li>{s}</li>)}</ol>
+  <p class="meta">{P.note}</p>
+
+  <h2>{P.talk}</h2>
+  <p>{P.write} <a href={mail}>contact@ascensionagency.fr</a>, {P.reply}</p>
+</Base>

@@ -1,30 +1,24 @@
 ---
-import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
-import Base from '../layouts/Base.astro';
-import { CATEGORIES } from '../content.config';
-const base = import.meta.env.BASE_URL;
-const articles = (await getCollection('articles')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const fmt = (d: Date) => d.toLocaleDateString('fr-BE', { day: 'numeric', month: 'long', year: 'numeric' });
+import { LANGS, LANG_CODES, DEFAULT_LANG } from '../i18n';
 ---
-<Base title="Les bonnes adresses de Bruxelles">
-  <section class="hero">
-    <span class="stamp">Nouveau chaque jour</span>
-    <h1>Que faire à Bruxelles ?</h1>
-    <p>Une adresse par jour : restaurants, bars, activités, sorties. Vérifiée, écrite par des Bruxellois, sans blabla. Allez.</p>
-  </section>
-
-  <div class="cards">
-    {articles.map(a => (
-      <a class:list={['card', { pic: !!a.data.image }]} href={`${base}${a.id}/`}>
-        {a.data.image && <Image class="thumb" src={a.data.image} alt="" width={480} height={360} format="webp" />}
-        <div>
-        <span class:list={['tag', a.data.category]}>{CATEGORIES[a.data.category]}</span>
-        <h3>{a.data.title}</h3>
-        <p>{a.data.description}</p>
-        <p class="meta">{fmt(a.data.date)}{a.data.address && ` · ${a.data.address}`}</p>
-        </div>
-      </a>
-    ))}
-  </div>
-</Base>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Que faire à Bruxelles</title>
+  <meta name="robots" content="noindex" />
+  {LANG_CODES.map(l => <link rel="alternate" hreflang={l} href={`/${l}/`} />)}
+  <link rel="alternate" hreflang="x-default" href={`/${DEFAULT_LANG}/`} />
+  <meta http-equiv="refresh" content={`2;url=/${DEFAULT_LANG}/`} />
+  <script define:vars={{ codes: LANG_CODES, def: DEFAULT_LANG }}>
+    // langue du navigateur si on la propose, sinon français
+    const want = (navigator.languages || [navigator.language || '']).map(l => l.slice(0, 2).toLowerCase());
+    location.replace('/' + (want.find(l => codes.includes(l)) || def) + '/');
+  </script>
+  <style>body{font:17px system-ui,sans-serif;padding:24px;background:#FBF6EA} a{display:inline-block;margin:4px 12px 4px 0}</style>
+</head>
+<body>
+  {LANG_CODES.map(l => <a href={`/${l}/`} lang={l}>{LANGS[l]}</a>)}
+</body>
+</html>

@@ -4,7 +4,7 @@ Tu es le rédacteur du site **Que faire à Bruxelles** (dépôt `C:\Users\moura\
 
 ## 1. Choisir le sujet
 
-1. Liste les articles existants : `ls src/content/articles` et lis leurs frontmatter (`title`, `address`) pour **ne jamais refaire un lieu déjà traité**.
+1. Liste les articles existants : `ls src/content/articles/fr` et lis leurs frontmatter (`title`, `address`) pour **ne jamais refaire un lieu déjà traité**.
 2. Alterne les catégories (`restaurants`, `bars`, `activites`, `sorties`) : prends celle qui a le moins d'articles. **Un article sur 7 est un top** (`category: tops`) : « Top 5 … », « Top 10 … », « Top 3 … » (ex. brunchs d'Ixelles, terrasses de Saint-Gilles, activités pour enfants, bars à jeux, cafés pour travailler). Fais le top quand le nombre d'articles existants est un multiple de 7.
 3. Trouve un lieu réel à Bruxelles (19 communes) avec WebSearch : un établissement en activité, avec un site web officiel ou une page sociale officielle. Privilégie les indépendants (restaurants, bars, cafés, activités, salles, ateliers, commerces à expérience) plutôt que les chaînes.
 
@@ -16,11 +16,11 @@ Tu es le rédacteur du site **Que faire à Bruxelles** (dépôt `C:\Users\moura\
 
 ## 2 bis. Récupérer une photo (obligatoire quand c'est possible)
 
-Une photo **de l'établissement lui-même**, jamais une image d'un autre lieu ni une image générée : d'abord l'`og:image` du site officiel (`curl -sL -A "Mozilla/5.0" <url> | grep -o 'og:image[^>]*'`), sinon la première grande photo de la page d'accueil (`<img src=…jpg|webp>`, pas un logo). Télécharge-la dans `src/content/articles/img/<slug>.<ext>` avec `curl -sL -A "Mozilla/5.0" -o …`, vérifie avec `file` que c'est bien une image (sinon supprime-la et passe sans photo). Pour un top : la photo du n° 1. Frontmatter : `image: ./img/<slug>.<ext>` et `image_credit: "Photo : <Nom de l'établissement>"`. Pas de photo trouvée = article sans photo, ce n'est pas un blocage.
+Une photo **de l'établissement lui-même**, jamais une image d'un autre lieu ni une image générée : d'abord l'`og:image` du site officiel (`curl -sL -A "Mozilla/5.0" <url> | grep -o 'og:image[^>]*'`), sinon la première grande photo de la page d'accueil (`<img src=…jpg|webp>`, pas un logo). Télécharge-la dans `src/content/articles/img/<slug>.<ext>` avec `curl -sL -A "Mozilla/5.0" -o …`, vérifie avec `file` que c'est bien une image (sinon supprime-la et passe sans photo). Pour un top : la photo du n° 1. Frontmatter : `image: ../img/<slug>.<ext>` et `image_credit: "Photo : <Nom de l'établissement>"`. Pas de photo trouvée = article sans photo, ce n'est pas un blocage.
 
 ## 3. Écrire l'article
 
-Fichier `src/content/articles/<slug>.md` (slug en minuscules, sans accents, tirets). Frontmatter :
+Fichier `src/content/articles/fr/<slug>.md` (slug en minuscules, sans accents, tirets). Frontmatter :
 
 ```
 ---
@@ -34,9 +34,13 @@ maps: "https://www.google.com/maps/search/?api=1&query=<Nom>+<adresse encodée>"
 ---
 ```
 
-Corps : 250 à 450 mots, en français, ton direct et concret (lis `noordzee-mer-du-nord.md` comme modèle). Structure d'une fiche : 1 paragraphe d'accroche, `## Ce qu'on y mange` / `## Ce qu'on y fait`, `## Pour qui`, `## Infos pratiques` (liste : horaires, prix, métro/tram, réservation). Structure d'un top (modèle : `top-3-visites-sous-la-pluie.md`) : 1 paragraphe d'intro puis `## 1. Nom` avec adresse en gras + lien officiel + 3-4 phrases, pour chaque entrée (chaque entrée vérifiée sur son site officiel).
+Corps : 250 à 450 mots, en français, ton direct et concret (lis `fr/noordzee-mer-du-nord.md` comme modèle). Structure d'une fiche : 1 paragraphe d'accroche, `## Ce qu'on y mange` / `## Ce qu'on y fait`, `## Pour qui`, `## Infos pratiques` (liste : horaires, prix, métro/tram, réservation). Structure d'un top (modèle : `top-3-visites-sous-la-pluie.md`) : 1 paragraphe d'intro puis `## 1. Nom` avec adresse en gras + lien officiel + 3-4 phrases, pour chaque entrée (chaque entrée vérifiée sur son site officiel).
 
 **Interdits absolus** : drogue, alcool mis en avant comme but de la sortie (un bar se décrit par son ambiance, pas par l'ivresse), sexe, nudité, contenu pour adultes, clubs de strip-tease, salons de massage, paris/casinos, politique, religion, avis négatifs sur un établissement, noms de plats affirmés sans source, photos (le site n'en affiche pas). Tout public, lisible par un enfant.
+
+## 3 bis. Traduire en 14 langues (obligatoire)
+
+Le site est en 15 langues. Une fois l'article français écrit, crée `src/content/articles/<lang>/<même-slug>.md` pour chaque lang ∈ nl, en, de, es, it, pt, pl, ro, tr, ar, zh, ja, ru, uk : même frontmatter (date, category, address, website, maps, image, image_credit, sponsored strictement identiques), seuls `title` et `description` sont traduits ; corps traduit naturellement par un natif, même structure, mêmes faits, noms propres inchangés. Vérifie : `ls src/content/articles/*/<slug>.md | wc -l` doit donner 15. Pour une correction demandée par un établissement, corrige les 15 fichiers.
 
 ## 4. Publier
 
@@ -46,7 +50,7 @@ git commit -m "Article : <titre>"
 git push origin main
 ```
 
-Le push déploie le site automatiquement (GitHub Pages). URL de l'article : `https://quefairebruxelles.be/<slug>/`.
+Le push déploie le site automatiquement (GitHub Pages). URL de l'article (version française, pour l'email) : `https://quefairebruxelles.be/fr/<slug>/`.
 
 ## 5. Prévenir l'établissement (fiches uniquement, pas les tops)
 
@@ -62,7 +66,7 @@ Si tu as trouvé un **email de contact sur le site officiel** (jamais deviné, j
 >
 > C'est gratuit, on a trouvé que ça méritait d'être partagé. On a repris une photo de votre site pour illustrer l'article : si vous préférez une autre photo, ou aucune, dites-le-moi et je change. Pareil si une info est inexacte.
 >
-> Si vous voulez aller plus loin (article dédié relu par vous, place dans nos tops, vidéo Reel tournée chez vous), les offres sont ici : <URL du site>/referencer/
+> Si vous voulez aller plus loin (article dédié relu par vous, place dans nos tops, vidéo Reel tournée chez vous), les offres sont ici : https://quefairebruxelles.be/fr/referencer/
 >
 > Bonne journée,
 > Mourad – Ascension

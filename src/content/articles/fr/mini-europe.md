@@ -6,7 +6,7 @@ category: activites
 address: "Bruparck, 1020 Bruxelles (Laeken)"
 website: "https://www.minieurope.com/"
 maps: "https://www.google.com/maps/search/?api=1&query=Mini-Europe+Bruparck+1020+Bruxelles"
-image: ./img/mini-europe.jpg
+image: ../img/mini-europe.jpg
 image_credit: "Photo : Mini-Europe"
 ---
 

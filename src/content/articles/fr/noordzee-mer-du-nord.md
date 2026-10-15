@@ -6,7 +6,7 @@ category: restaurants
 address: "Rue Sainte-Catherine 45, 1000 Bruxelles"
 website: "https://www.noordzeemerdunord.be/"
 maps: "https://www.google.com/maps/search/?api=1&query=Noordzee+Mer+du+Nord+Rue+Sainte-Catherine+45+1000+Bruxelles"
-image: ./img/noordzee-mer-du-nord.png
+image: ../img/noordzee-mer-du-nord.png
 image_credit: "Visuel : Noordzee – Mer du Nord"
 ---
 

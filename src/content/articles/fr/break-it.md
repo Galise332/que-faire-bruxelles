@@ -7,7 +7,7 @@ address: "Rue de Flandre 73, 1000 Bruxelles"
 website: "https://www.break-it.be/"
 maps: "https://maps.app.goo.gl/kH8a8CxzkePj1VtS7"
 sponsored: true
-image: ./img/break-it.webp
+image: ../img/break-it.webp
 image_credit: "Photo : Break-it"
 ---
 

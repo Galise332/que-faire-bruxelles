@@ -1,0 +1,95 @@
+// 15 langues : nationalités qui visitent le plus Bruxelles / la Belgique / l'Europe (Mourad, 2026-10-15)
+export const LANGS = {
+  fr: 'Français', nl: 'Nederlands', en: 'English', de: 'Deutsch', es: 'Español', it: 'Italiano', pt: 'Português',
+  pl: 'Polski', ro: 'Română', tr: 'Türkçe', ar: 'العربية', zh: '中文', ja: '日本語', ru: 'Русский', uk: 'Українська',
+} as const;
+export type Lang = keyof typeof LANGS;
+export const LANG_CODES = Object.keys(LANGS) as Lang[];
+export const DEFAULT_LANG: Lang = 'fr';
+export const RTL: Lang[] = ['ar'];
+export const PRO_LANGS: Lang[] = ['fr', 'nl', 'en']; // page « Référencer » : les établissements sont locaux
+
+type Strings = {
+  title: string; tagline: string; hero: string; heroSub: string; stamp: string;
+  cats: { restaurants: string; bars: string; activites: string; sorties: string; tops: string };
+  inBrussels: string; published: string; address: string; site: string; map: string; mapLink: string;
+  partner: string; empty: string; footer1: string; footer2: string; owner: string; editedBy: string; pro: string; rssDesc: string;
+};
+
+export const T: Record<Lang, Strings> = {
+  fr: { title: 'Que faire à Bruxelles', tagline: 'Une adresse par jour', hero: 'Que faire à Bruxelles ?', heroSub: 'Une adresse par jour : restaurants, bars, activités, sorties. Vérifiée, écrite par des Bruxellois, sans blabla. Allez.', stamp: 'Nouveau chaque jour',
+    cats: { restaurants: 'Restaurants', bars: 'Bars & cafés', activites: 'Activités', sorties: 'Sorties', tops: 'Tops' },
+    inBrussels: '{cat} à Bruxelles', published: 'Publié le', address: 'Adresse', site: 'Site', map: 'Plan', mapLink: 'Ouvrir dans Google Maps',
+    partner: "Article réalisé en partenariat avec l'établissement.", empty: 'Rien encore ici. Ça arrive, un article par jour.',
+    footer1: 'Fait à Bruxelles, zinneke de cœur.', footer2: 'Infos vérifiées au moment de la publication ; horaires et prix peuvent changer.', owner: 'Vous tenez un établissement ?', editedBy: 'Édité par', pro: 'Référencer mon établissement', rssDesc: 'Un article par jour sur une adresse bruxelloise.' },
+  nl: { title: 'Wat te doen in Brussel', tagline: 'Elke dag een adres', hero: 'Wat te doen in Brussel?', heroSub: 'Elke dag een adres: restaurants, bars, activiteiten, uitjes. Gecheckt, geschreven door Brusselaars, zonder blabla. Allez.', stamp: 'Elke dag nieuw',
+    cats: { restaurants: 'Restaurants', bars: 'Bars & cafés', activites: 'Activiteiten', sorties: 'Uitgaan', tops: 'Tops' },
+    inBrussels: '{cat} in Brussel', published: 'Gepubliceerd op', address: 'Adres', site: 'Website', map: 'Kaart', mapLink: 'Openen in Google Maps',
+    partner: 'Artikel gemaakt in samenwerking met de zaak.', empty: 'Nog niets hier. Het komt eraan, elke dag een artikel.',
+    footer1: 'Gemaakt in Brussel, zinneke in hart en nieren.', footer2: 'Info gecheckt bij publicatie; openingsuren en prijzen kunnen veranderen.', owner: 'Heb je een zaak?', editedBy: 'Uitgegeven door', pro: 'Mijn zaak laten opnemen', rssDesc: 'Elke dag een artikel over een Brussels adres.' },
+  en: { title: 'What to do in Brussels', tagline: 'One address a day', hero: 'What to do in Brussels?', heroSub: 'One address a day: restaurants, bars, activities, nights out. Verified, written by locals, no fluff. Allez.', stamp: 'New every day',
+    cats: { restaurants: 'Restaurants', bars: 'Bars & cafés', activites: 'Activities', sorties: 'Going out', tops: 'Top lists' },
+    inBrussels: '{cat} in Brussels', published: 'Published on', address: 'Address', site: 'Website', map: 'Map', mapLink: 'Open in Google Maps',
+    partner: 'Article produced in partnership with the venue.', empty: 'Nothing here yet. One article a day, it is coming.',
+    footer1: 'Made in Brussels, zinneke at heart.', footer2: 'Details checked at publication; opening hours and prices may change.', owner: 'Do you run a venue?', editedBy: 'Published by', pro: 'List my venue', rssDesc: 'One article a day about a Brussels address.' },
+  de: { title: 'Was tun in Brüssel', tagline: 'Jeden Tag eine Adresse', hero: 'Was tun in Brüssel?', heroSub: 'Jeden Tag eine Adresse: Restaurants, Bars, Aktivitäten, Ausgehen. Geprüft, von Brüsselern geschrieben, ohne Blabla. Allez.', stamp: 'Täglich neu',
+    cats: { restaurants: 'Restaurants', bars: 'Bars & Cafés', activites: 'Aktivitäten', sorties: 'Ausgehen', tops: 'Top-Listen' },
+    inBrussels: '{cat} in Brüssel', published: 'Veröffentlicht am', address: 'Adresse', site: 'Website', map: 'Karte', mapLink: 'In Google Maps öffnen',
+    partner: 'Artikel in Zusammenarbeit mit dem Betrieb erstellt.', empty: 'Hier ist noch nichts. Kommt bald, ein Artikel pro Tag.',
+    footer1: 'Gemacht in Brüssel, Zinneke im Herzen.', footer2: 'Angaben bei Veröffentlichung geprüft; Öffnungszeiten und Preise können sich ändern.', owner: 'Sie führen ein Lokal?', editedBy: 'Herausgegeben von', pro: 'Mein Lokal eintragen', rssDesc: 'Jeden Tag ein Artikel über eine Brüsseler Adresse.' },
+  es: { title: 'Qué hacer en Bruselas', tagline: 'Una dirección al día', hero: '¿Qué hacer en Bruselas?', heroSub: 'Una dirección al día: restaurantes, bares, actividades, salidas. Verificada, escrita por bruselenses, sin rodeos. Allez.', stamp: 'Nuevo cada día',
+    cats: { restaurants: 'Restaurantes', bars: 'Bares y cafés', activites: 'Actividades', sorties: 'Salidas', tops: 'Tops' },
+    inBrussels: '{cat} en Bruselas', published: 'Publicado el', address: 'Dirección', site: 'Web', map: 'Mapa', mapLink: 'Abrir en Google Maps',
+    partner: 'Artículo realizado en colaboración con el establecimiento.', empty: 'Todavía nada por aquí. Llega pronto, un artículo al día.',
+    footer1: 'Hecho en Bruselas, zinneke de corazón.', footer2: 'Datos verificados al publicar; horarios y precios pueden cambiar.', owner: '¿Tienes un establecimiento?', editedBy: 'Editado por', pro: 'Incluir mi establecimiento', rssDesc: 'Un artículo al día sobre una dirección de Bruselas.' },
+  it: { title: 'Cosa fare a Bruxelles', tagline: 'Un indirizzo al giorno', hero: 'Cosa fare a Bruxelles?', heroSub: 'Un indirizzo al giorno: ristoranti, bar, attività, serate. Verificato, scritto da gente di Bruxelles, senza fronzoli. Allez.', stamp: 'Nuovo ogni giorno',
+    cats: { restaurants: 'Ristoranti', bars: 'Bar e caffè', activites: 'Attività', sorties: 'Uscite', tops: 'Top' },
+    inBrussels: '{cat} a Bruxelles', published: 'Pubblicato il', address: 'Indirizzo', site: 'Sito', map: 'Mappa', mapLink: 'Apri in Google Maps',
+    partner: 'Articolo realizzato in collaborazione con il locale.', empty: 'Ancora niente qui. Arriva presto, un articolo al giorno.',
+    footer1: 'Fatto a Bruxelles, zinneke nel cuore.', footer2: 'Informazioni verificate al momento della pubblicazione; orari e prezzi possono cambiare.', owner: 'Gestisci un locale?', editedBy: 'A cura di', pro: 'Inserire il mio locale', rssDesc: 'Un articolo al giorno su un indirizzo di Bruxelles.' },
+  pt: { title: 'O que fazer em Bruxelas', tagline: 'Um endereço por dia', hero: 'O que fazer em Bruxelas?', heroSub: 'Um endereço por dia: restaurantes, bares, atividades, saídas. Verificado, escrito por gente de Bruxelas, sem rodeios. Allez.', stamp: 'Novo todos os dias',
+    cats: { restaurants: 'Restaurantes', bars: 'Bares e cafés', activites: 'Atividades', sorties: 'Saídas', tops: 'Tops' },
+    inBrussels: '{cat} em Bruxelas', published: 'Publicado em', address: 'Morada', site: 'Site', map: 'Mapa', mapLink: 'Abrir no Google Maps',
+    partner: 'Artigo realizado em parceria com o estabelecimento.', empty: 'Ainda nada por aqui. Está a chegar, um artigo por dia.',
+    footer1: 'Feito em Bruxelas, zinneke de coração.', footer2: 'Informações verificadas na publicação; horários e preços podem mudar.', owner: 'Tem um estabelecimento?', editedBy: 'Editado por', pro: 'Inscrever o meu estabelecimento', rssDesc: 'Um artigo por dia sobre um endereço de Bruxelas.' },
+  pl: { title: 'Co robić w Brukseli', tagline: 'Jeden adres dziennie', hero: 'Co robić w Brukseli?', heroSub: 'Jeden adres dziennie: restauracje, bary, atrakcje, wyjścia. Sprawdzone, pisane przez brukselczyków, bez lania wody. Allez.', stamp: 'Codziennie nowe',
+    cats: { restaurants: 'Restauracje', bars: 'Bary i kawiarnie', activites: 'Atrakcje', sorties: 'Wyjścia', tops: 'Topy' },
+    inBrussels: '{cat} w Brukseli', published: 'Opublikowano', address: 'Adres', site: 'Strona', map: 'Mapa', mapLink: 'Otwórz w Google Maps',
+    partner: 'Artykuł przygotowany we współpracy z lokalem.', empty: 'Jeszcze nic tutaj nie ma. Wkrótce, jeden artykuł dziennie.',
+    footer1: 'Zrobione w Brukseli, zinneke z serca.', footer2: 'Informacje sprawdzone w dniu publikacji; godziny i ceny mogą się zmienić.', owner: 'Prowadzisz lokal?', editedBy: 'Wydawca', pro: 'Dodaj mój lokal', rssDesc: 'Codziennie jeden artykuł o brukselskim adresie.' },
+  ro: { title: 'Ce să faci în Bruxelles', tagline: 'O adresă pe zi', hero: 'Ce să faci în Bruxelles?', heroSub: 'O adresă pe zi: restaurante, baruri, activități, ieșiri. Verificată, scrisă de bruxellezi, fără vorbărie. Allez.', stamp: 'Nou în fiecare zi',
+    cats: { restaurants: 'Restaurante', bars: 'Baruri și cafenele', activites: 'Activități', sorties: 'Ieșiri', tops: 'Topuri' },
+    inBrussels: '{cat} în Bruxelles', published: 'Publicat pe', address: 'Adresă', site: 'Site', map: 'Hartă', mapLink: 'Deschide în Google Maps',
+    partner: 'Articol realizat în parteneriat cu localul.', empty: 'Nimic aici încă. Vine, un articol pe zi.',
+    footer1: 'Făcut în Bruxelles, zinneke în suflet.', footer2: 'Informații verificate la publicare; programul și prețurile se pot schimba.', owner: 'Ai un local?', editedBy: 'Editat de', pro: 'Înscrie localul meu', rssDesc: 'Un articol pe zi despre o adresă din Bruxelles.' },
+  tr: { title: "Brüksel'de ne yapılır", tagline: 'Her gün bir adres', hero: "Brüksel'de ne yapılır?", heroSub: 'Her gün bir adres: restoranlar, barlar, etkinlikler, gece hayatı. Doğrulanmış, Brüksellilerce yazılmış, lafı uzatmadan. Allez.', stamp: 'Her gün yeni',
+    cats: { restaurants: 'Restoranlar', bars: 'Barlar ve kafeler', activites: 'Etkinlikler', sorties: 'Gece hayatı', tops: 'Listeler' },
+    inBrussels: "Brüksel'de {cat}", published: 'Yayın tarihi', address: 'Adres', site: 'Web sitesi', map: 'Harita', mapLink: "Google Maps'te aç",
+    partner: 'Bu yazı mekânla iş birliği içinde hazırlanmıştır.', empty: 'Burada henüz bir şey yok. Geliyor, her gün bir yazı.',
+    footer1: "Brüksel'de yapıldı, yürekten zinneke.", footer2: 'Bilgiler yayın anında doğrulanmıştır; saatler ve fiyatlar değişebilir.', owner: 'Bir mekân mı işletiyorsunuz?', editedBy: 'Yayıncı', pro: 'Mekânımı ekle', rssDesc: 'Her gün bir Brüksel adresi hakkında bir yazı.' },
+  ar: { title: 'ماذا تفعل في بروكسل', tagline: 'عنوان واحد كل يوم', hero: 'ماذا تفعل في بروكسل؟', heroSub: 'عنوان واحد كل يوم: مطاعم، مقاهٍ، أنشطة، سهرات. معلومات موثّقة يكتبها أهل بروكسل، بلا حشو. Allez.', stamp: 'جديد كل يوم',
+    cats: { restaurants: 'مطاعم', bars: 'بارات ومقاهٍ', activites: 'أنشطة', sorties: 'سهرات', tops: 'قوائم' },
+    inBrussels: '{cat} في بروكسل', published: 'نُشر في', address: 'العنوان', site: 'الموقع', map: 'الخريطة', mapLink: 'فتح في خرائط Google',
+    partner: 'مقال أُعدّ بالشراكة مع المكان.', empty: 'لا شيء هنا بعد. قادم قريبًا، مقال كل يوم.',
+    footer1: 'صُنع في بروكسل، زينيكه بالقلب.', footer2: 'المعلومات موثّقة وقت النشر؛ قد تتغير المواعيد والأسعار.', owner: 'هل تدير مكانًا؟', editedBy: 'يصدره', pro: 'إدراج مكاني', rssDesc: 'مقال كل يوم عن عنوان في بروكسل.' },
+  zh: { title: '布鲁塞尔玩什么', tagline: '每天一个地址', hero: '布鲁塞尔玩什么？', heroSub: '每天一个地址：餐厅、酒吧、活动、夜生活。信息经过核实，由布鲁塞尔本地人撰写，不说废话。Allez.', stamp: '每日更新',
+    cats: { restaurants: '餐厅', bars: '酒吧与咖啡馆', activites: '活动', sorties: '夜生活', tops: '榜单' },
+    inBrussels: '布鲁塞尔{cat}', published: '发布于', address: '地址', site: '网站', map: '地图', mapLink: '在 Google 地图中打开',
+    partner: '本文与该场所合作完成。', empty: '这里还没有内容。每天一篇，很快就来。',
+    footer1: '布鲁塞尔出品，zinneke 之心。', footer2: '信息在发布时已核实；营业时间和价格可能变动。', owner: '您经营一家店？', editedBy: '出版方', pro: '收录我的店', rssDesc: '每天一篇关于布鲁塞尔地址的文章。' },
+  ja: { title: 'ブリュッセルで何をする', tagline: '毎日ひとつのアドレス', hero: 'ブリュッセルで何をする？', heroSub: '毎日ひとつのアドレス：レストラン、バー、アクティビティ、お出かけ。確認済みの情報を、ブリュッセル在住者が無駄なく書きます。Allez.', stamp: '毎日更新',
+    cats: { restaurants: 'レストラン', bars: 'バー＆カフェ', activites: 'アクティビティ', sorties: 'お出かけ', tops: 'ランキング' },
+    inBrussels: 'ブリュッセルの{cat}', published: '公開日', address: '住所', site: 'サイト', map: '地図', mapLink: 'Google マップで開く',
+    partner: 'この記事は店舗との提携により制作されました。', empty: 'まだ何もありません。毎日1本、まもなく公開。',
+    footer1: 'ブリュッセル発、心は zinneke。', footer2: '情報は公開時点で確認済み。営業時間や料金は変わることがあります。', owner: 'お店を経営していますか？', editedBy: '発行', pro: 'お店を掲載する', rssDesc: 'ブリュッセルのアドレスを毎日1本。' },
+  ru: { title: 'Чем заняться в Брюсселе', tagline: 'Один адрес в день', hero: 'Чем заняться в Брюсселе?', heroSub: 'Один адрес в день: рестораны, бары, развлечения, выходы в город. Проверено, написано брюссельцами, без воды. Allez.', stamp: 'Новое каждый день',
+    cats: { restaurants: 'Рестораны', bars: 'Бары и кафе', activites: 'Развлечения', sorties: 'Куда сходить', tops: 'Топы' },
+    inBrussels: '{cat} в Брюсселе', published: 'Опубликовано', address: 'Адрес', site: 'Сайт', map: 'Карта', mapLink: 'Открыть в Google Картах',
+    partner: 'Статья подготовлена в партнёрстве с заведением.', empty: 'Здесь пока пусто. Скоро, по статье в день.',
+    footer1: 'Сделано в Брюсселе, zinneke в душе.', footer2: 'Данные проверены на момент публикации; часы работы и цены могут меняться.', owner: 'У вас своё заведение?', editedBy: 'Издатель', pro: 'Добавить моё заведение', rssDesc: 'Каждый день статья об одном адресе в Брюсселе.' },
+  uk: { title: 'Що робити в Брюсселі', tagline: 'Одна адреса на день', hero: 'Що робити в Брюсселі?', heroSub: 'Одна адреса на день: ресторани, бари, розваги, куди піти. Перевірено, написано брюссельцями, без води. Allez.', stamp: 'Нове щодня',
+    cats: { restaurants: 'Ресторани', bars: 'Бари та кафе', activites: 'Розваги', sorties: 'Куди піти', tops: 'Топи' },
+    inBrussels: '{cat} у Брюсселі', published: 'Опубліковано', address: 'Адреса', site: 'Сайт', map: 'Мапа', mapLink: 'Відкрити в Google Картах',
+    partner: 'Статтю підготовлено у партнерстві із закладом.', empty: 'Тут поки порожньо. Скоро, по статті щодня.',
+    footer1: 'Зроблено в Брюсселі, zinneke в серці.', footer2: 'Дані перевірено на момент публікації; години роботи та ціни можуть змінюватися.', owner: 'У вас свій заклад?', editedBy: 'Видавець', pro: 'Додати мій заклад', rssDesc: 'Щодня стаття про одну адресу в Брюсселі.' },
+};

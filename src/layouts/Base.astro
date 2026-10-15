@@ -1,23 +1,33 @@
 ---
-import { CATEGORIES } from '../content.config';
-const { title, description = 'Les bonnes adresses de Bruxelles : restaurants, bars, activités et sorties. Une adresse par jour, vérifiée.' } = Astro.props;
-const base = import.meta.env.BASE_URL;
-const canonical = new URL(Astro.url.pathname, Astro.site);
-const path = Astro.url.pathname;
+import { LANGS, LANG_CODES, RTL, PRO_LANGS, T, type Lang } from '../i18n';
+interface Props { lang: Lang; title: string; description?: string; langs?: Lang[] }
+const { lang, title, langs = LANG_CODES } = Astro.props;
+const t = T[lang];
+const description = Astro.props.description ?? t.rssDesc;
+const path = Astro.url.pathname; // /fr/… ou /fr/
+const rest = path.replace(/^\/[a-z]{2}\//, '');
+const canonical = new URL(path, Astro.site);
+const isPro = rest.startsWith('referencer/');
+// même page dans une autre langue ; la page pro n'existe qu'en fr/nl/en
+const alt = (l: Lang) => `/${isPro && !PRO_LANGS.includes(l) ? 'en' : l}/${rest}`;
+const proHref = `/${PRO_LANGS.includes(lang) ? lang : 'en'}/referencer/`;
 ---
 <!doctype html>
-<html lang="fr">
+<html lang={lang} dir={RTL.includes(lang) ? 'rtl' : 'ltr'}>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title} · Que faire à Bruxelles</title>
+  <title>{title} · {t.title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
+  {langs.map(l => <link rel="alternate" hreflang={l} href={new URL(alt(l), Astro.site)} />)}
+  <link rel="alternate" hreflang="x-default" href={new URL(alt('fr'), Astro.site)} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="article" />
-  <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
-  <link rel="alternate" type="application/rss+xml" title="Que faire à Bruxelles" href={`${base}rss.xml`} />
+  <meta property="og:locale" content={lang} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title={t.title} href={`/${lang}/rss.xml`} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Archivo+Black&display=swap" rel="stylesheet" />
@@ -26,13 +36,15 @@ const path = Astro.url.pathname;
     :root {
       --paper:#FBF6EA; --ink:#141414; --yellow:#FDDA24; --red:#EF3340; --blue:#1F3F8F; --muted:#5E5A52; --white:#fff;
       --shadow: 5px 5px 0 var(--ink);
+      --sans: Archivo, system-ui, -apple-system, 'Segoe UI', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans CJK SC', 'Noto Sans JP', sans-serif;
+      --black: 'Archivo Black', Archivo, system-ui, sans-serif;
     }
     * { box-sizing:border-box }
     html { background:var(--paper) }
-    body { margin:0; font:17px/1.65 Archivo, system-ui, sans-serif; color:var(--ink); background:var(--paper) }
+    body { margin:0; font:17px/1.65 var(--sans); color:var(--ink); background:var(--paper) }
     body::before { content:""; display:block; height:8px; background:linear-gradient(90deg, var(--ink) 0 33.3%, var(--yellow) 33.3% 66.6%, var(--red) 66.6%) }
     a { color:var(--ink) }
-    h1, h2, h3, .display { font-family:'Archivo Black', Archivo, sans-serif; font-weight:400; letter-spacing:-.01em; line-height:1.1 }
+    h1, h2, h3, .display { font-family:var(--black); font-weight:900; letter-spacing:-.01em; line-height:1.1 }
     h1 { font-size:clamp(32px, 6vw, 48px); margin:.1em 0 .4em }
     h2 { font-size:clamp(22px, 3.5vw, 28px); margin:1.6em 0 .5em }
     h3 { font-size:22px; margin:.3em 0 }
@@ -40,13 +52,14 @@ const path = Astro.url.pathname;
 
     header { padding:22px 0 14px }
     header .row { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 20px }
-    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); font-family:'Archivo Black', sans-serif; font-size:22px; line-height:1 }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); font-family:var(--black); font-weight:900; font-size:22px; line-height:1 }
     .brand svg { width:40px; height:40px; flex:none }
-    .brand small { display:block; font:500 12px/1 Archivo, sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:5px }
+    .brand small { display:block; font:500 12px/1 var(--sans); letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:5px }
+    .langs { font:600 14px/1 var(--sans); padding:9px 12px; border:2px solid var(--ink); background:var(--white); color:var(--ink); border-radius:0; cursor:pointer }
     nav { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px }
-    nav a { font:600 14px/1 Archivo, sans-serif; text-decoration:none; padding:9px 13px; border:2px solid var(--ink); border-radius:999px; background:var(--white); transition:transform .12s, box-shadow .12s }
+    nav a { font:600 14px/1 var(--sans); text-decoration:none; padding:9px 13px; border:2px solid var(--ink); border-radius:999px; background:var(--white); transition:transform .12s, box-shadow .12s }
     nav a:hover { transform:translate(-2px,-2px); box-shadow:3px 3px 0 var(--ink) }
-    nav a.pro { margin-left:auto; background:var(--yellow) }
+    nav a.pro { margin-inline-start:auto; background:var(--yellow) }
     nav a.on, nav a.pro.on { background:var(--ink); color:var(--yellow) }
 
     main { padding:26px 0 56px }
@@ -55,7 +68,7 @@ const path = Astro.url.pathname;
     .hero { position:relative; background:var(--yellow); border:3px solid var(--ink); box-shadow:var(--shadow); padding:30px 26px 26px; margin:30px 0 34px }
     .hero h1 { margin:0 0 .3em }
     .hero p { margin:0; font-size:19px; max-width:560px }
-    .hero .stamp { position:absolute; top:-16px; right:18px; background:var(--red); color:var(--white); font:700 12px/1 Archivo, sans-serif; letter-spacing:.12em; text-transform:uppercase; padding:8px 12px; border:2px solid var(--ink); transform:rotate(3deg) }
+    .hero .stamp { position:absolute; top:-16px; inset-inline-end:18px; background:var(--red); color:var(--white); font:700 12px/1 var(--sans); letter-spacing:.12em; text-transform:uppercase; padding:8px 12px; border:2px solid var(--ink); transform:rotate(3deg) }
 
     .cards { display:grid; gap:18px }
     .card { display:block; position:relative; background:var(--white); border:2px solid var(--ink); padding:20px 22px 18px; text-decoration:none; color:var(--ink); transition:transform .12s, box-shadow .12s }
@@ -63,71 +76,73 @@ const path = Astro.url.pathname;
     .card h3 { margin:8px 0 6px; font-size:clamp(20px, 3vw, 24px) }
     .card p { margin:0; color:var(--muted) }
     .card .meta { margin-top:12px }
-
     .card.pic { display:grid; grid-template-columns:1fr; gap:0 18px; padding:0 }
     .card.pic .thumb { width:100%; height:200px; object-fit:cover; border-bottom:2px solid var(--ink); display:block }
     .card.pic > div { padding:18px 22px 18px }
-    @media (min-width:640px) { .card.pic { grid-template-columns:200px 1fr } .card.pic .thumb { height:100%; min-height:170px; border-bottom:0; border-right:2px solid var(--ink) } }
+    @media (min-width:640px) { .card.pic { grid-template-columns:200px 1fr } .card.pic .thumb { height:100%; min-height:170px; border-bottom:0; border-inline-end:2px solid var(--ink) } }
     .photo { margin:22px 0 0; border:3px solid var(--ink); box-shadow:var(--shadow); background:var(--white) }
     .photo img { display:block; width:100%; height:auto; max-height:520px; object-fit:cover }
-    .photo figcaption { font:500 12px/1.4 Archivo, sans-serif; color:var(--muted); padding:6px 10px; border-top:2px solid var(--ink); text-align:right }
-    .tag { display:inline-block; font:700 11px/1 Archivo, sans-serif; letter-spacing:.14em; text-transform:uppercase; padding:6px 9px; border:2px solid var(--ink); background:var(--white) }
+    .photo figcaption { font:500 12px/1.4 var(--sans); color:var(--muted); padding:6px 10px; border-top:2px solid var(--ink); text-align:end }
+
+    .tag { display:inline-block; font:700 11px/1 var(--sans); letter-spacing:.14em; text-transform:uppercase; padding:6px 9px; border:2px solid var(--ink); background:var(--white) }
     .tag.restaurants { background:var(--red); color:var(--white) }
     .tag.bars { background:var(--yellow) }
     .tag.activites { background:var(--blue); color:var(--white) }
     .tag.sorties { background:var(--white) }
     .tag.tops { background:var(--ink); color:var(--yellow) }
-    .meta { font:500 13px/1.4 Archivo, sans-serif; color:var(--muted); letter-spacing:.02em }
+    .meta { font:500 13px/1.4 var(--sans); color:var(--muted); letter-spacing:.02em }
 
     /* Plaque de rue bruxelloise : émail bleu, liseré blanc */
-    .plaque { background:var(--blue); color:var(--white); border:3px solid var(--white); outline:3px solid var(--blue); box-shadow:var(--shadow); padding:16px 20px; margin:28px 3px 30px 0; font:500 15px/1.6 Archivo, sans-serif }
+    .plaque { background:var(--blue); color:var(--white); border:3px solid var(--white); outline:3px solid var(--blue); box-shadow:var(--shadow); padding:16px 20px; margin:28px 3px 30px 0; font:500 15px/1.6 var(--sans) }
     .plaque div { margin:3px 0 }
     .plaque a { color:var(--white); text-decoration-color:var(--yellow); text-underline-offset:3px }
     .plaque .k { display:inline-block; min-width:84px; font-size:11px; letter-spacing:.14em; text-transform:uppercase; opacity:.8 }
 
     article.body { font-size:18px }
-    article.body h2 { padding-left:14px; border-left:6px solid var(--yellow) }
-    article.body ul { padding-left:22px } article.body li { margin:4px 0 }
+    article.body h2 { padding-inline-start:14px; border-inline-start:6px solid var(--yellow) }
+    article.body ul { padding-inline-start:22px } article.body li { margin:4px 0 }
     article.body strong { font-weight:700 }
-    .sponsored { font:500 13px/1.5 Archivo, sans-serif; color:var(--muted); border-left:4px solid var(--red); padding-left:10px; margin:18px 0 }
-
+    .sponsored { font:500 13px/1.5 var(--sans); color:var(--muted); border-inline-start:4px solid var(--red); padding-inline-start:10px; margin:18px 0 }
 
     .offres { display:grid; gap:18px; margin:18px 0 8px }
     @media (min-width:700px) { .offres { grid-template-columns:repeat(3, 1fr) } }
     .offre { background:var(--white); border:2px solid var(--ink); padding:22px 20px; display:flex; flex-direction:column }
     .offre.star { background:var(--yellow); box-shadow:var(--shadow) }
-    .offre .prix { font-family:'Archivo Black', sans-serif; font-size:34px; margin:6px 0 2px } .offre .prix small { font:500 13px Archivo, sans-serif; color:var(--muted) }
+    .offre .prix { font-family:var(--black); font-weight:900; font-size:34px; margin:6px 0 2px } .offre .prix small { font:500 13px var(--sans); color:var(--muted) }
     .offre h3 { font-size:19px; margin:0 }
     .offre p { margin:10px 0 0; color:var(--muted); font-size:15px; flex:1 }
     .steps { counter-reset:s; list-style:none; padding:0; margin:12px 0 }
     .steps li { position:relative; padding:4px 0 4px 48px; margin:8px 0 }
-    .steps li::before { counter-increment:s; content:counter(s); position:absolute; left:0; top:0; width:34px; height:34px; border:2px solid var(--ink); background:var(--yellow); font-family:'Archivo Black', sans-serif; display:grid; place-items:center }
+    .steps li::before { counter-increment:s; content:counter(s); position:absolute; left:0; top:0; width:34px; height:34px; border:2px solid var(--ink); background:var(--yellow); font-family:var(--black); font-weight:900; display:grid; place-items:center }
 
-    footer { border-top:3px solid var(--ink); padding:24px 0 44px; font:500 14px/1.7 Archivo, sans-serif; color:var(--muted) }
+    footer { border-top:3px solid var(--ink); padding:24px 0 44px; font:500 14px/1.7 var(--sans); color:var(--muted) }
     footer .row { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px 24px }
     footer a { color:var(--ink) }
-    footer .zinneke { font-family:'Archivo Black', sans-serif; color:var(--ink); font-size:15px }
+    footer .zinneke { font-family:var(--black); font-weight:900; color:var(--ink); font-size:15px }
     img { max-width:100% }
   </style>
 </head>
 <body>
   <header class="wrap">
     <div class="row">
-      <a class="brand" href={base} aria-label="Que faire à Bruxelles, accueil">
+      <a class="brand" href={`/${lang}/`} aria-label={t.title}>
         <svg viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="#141414" stroke-width="2"><path d="M20 6 L8 14 L20 22 L32 14 Z M8 14 V26 L20 34 L32 26 V14 M20 22 V34" /><path d="M20 6 L20 22 M8 14 L20 22 M32 14 L20 22" /></g><g fill="#FDDA24" stroke="#141414" stroke-width="2"><circle cx="20" cy="6" r="4"/><circle cx="8" cy="14" r="4"/><circle cx="32" cy="14" r="4"/><circle cx="8" cy="26" r="4"/><circle cx="32" cy="26" r="4"/><circle cx="20" cy="34" r="4"/><circle cx="20" cy="22" r="4.5" fill="#EF3340"/></g></svg>
-        <span>Que faire à Bruxelles<small>Une adresse par jour</small></span>
+        <span>{t.title}<small>{t.tagline}</small></span>
       </a>
+      <select class="langs" aria-label="Language" onchange="location.href=this.value">
+        {LANG_CODES.map(l => <option value={alt(l)} selected={l === lang}>{LANGS[l]}</option>)}
+      </select>
     </div>
     <nav>
-      {Object.entries(CATEGORIES).map(([slug, label]) => <a class:list={{ on: path.includes(`/categorie/${slug}/`) }} href={`${base}categorie/${slug}/`}>{label}</a>)}
-      <a class:list={['pro', { on: path.includes('/referencer/') }]} href={`${base}referencer/`}>Référencer mon établissement</a>
+      {Object.entries(t.cats).map(([slug, label]) => <a class:list={{ on: rest.startsWith(`categorie/${slug}/`) }} href={`/${lang}/categorie/${slug}/`}>{label}</a>)}
+      <a class:list={['pro', { on: isPro }]} href={proHref}>{t.pro}</a>
     </nav>
   </header>
   <main class="wrap"><slot /></main>
   <footer>
     <div class="wrap row">
-      <div><span class="zinneke">Fait à Bruxelles, zinneke de cœur.</span><br />Infos vérifiées au moment de la publication ; horaires et prix peuvent changer.</div>
-      <div><a href={`${base}referencer/`}>Vous tenez un établissement ?</a><br />Édité par <a href="https://www.ascensionagency.fr">Ascension</a> · <a href="mailto:contact@ascensionagency.fr">contact@ascensionagency.fr</a> · <a href={`${base}rss.xml`}>RSS</a></div>
+      <div><span class="zinneke">{t.footer1}</span><br />{t.footer2}</div>
+      <div><a href={proHref}>{t.owner}</a><br />{t.editedBy} <a href="https://www.ascensionagency.fr">Ascension</a> · <a href="mailto:contact@ascensionagency.fr">contact@ascensionagency.fr</a> · <a href={`/${lang}/rss.xml`}>RSS</a></div>
     </div>
   </footer>
 </body>

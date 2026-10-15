@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { LANG_CODES, T, type Lang } from '../../i18n';
+export function getStaticPaths() { return LANG_CODES.map(lang => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+const t = T[lang];
+const articles = (await getCollection('articles', a => a.id.startsWith(`${lang}/`))).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const slug = (id: string) => id.slice(3);
+const fmt = (d: Date) => d.toLocaleDateString(lang, { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base lang={lang} title={t.hero}>
+  <section class="hero">
+    <span class="stamp">{t.stamp}</span>
+    <h1>{t.hero}</h1>
+    <p>{t.heroSub}</p>
+  </section>
+
+  <div class="cards">
+    {articles.map(a => (
+      <a class:list={['card', { pic: !!a.data.image }]} href={`/${lang}/${slug(a.id)}/`}>
+        {a.data.image && <Image class="thumb" src={a.data.image} alt="" width={480} height={360} format="webp" />}
+        <div>
+        <span class:list={['tag', a.data.category]}>{t.cats[a.data.category]}</span>
+        <h3>{a.data.title}</h3>
+        <p>{a.data.description}</p>
+        <p class="meta">{fmt(a.data.date)}{a.data.address && ` · ${a.data.address}`}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</Base>
