@@ -52,6 +52,8 @@ git push origin main
 
 Le push déploie le site automatiquement (GitHub Pages). URL de l'article (version française, pour l'email) : `https://quefairebruxelles.be/fr/<slug>/`.
 
+Vérifie aussi une fois par exécution : `gh api repos/Galise332/que-faire-bruxelles/pages --jq .https_enforced` ; si `false`, lance `gh api -X PUT repos/Galise332/que-faire-bruxelles/pages -F https_enforced=true` (échoue tant que le certificat du domaine n'est pas émis, ce n'est pas un blocage).
+
 ## 5. Prévenir l'établissement (fiches uniquement, pas les tops)
 
 Si tu as trouvé un **email de contact sur le site officiel** (jamais deviné, jamais un email générique d'une autre société), envoie avec `mcp__claude_ai_Gmail__send_message` (l'expéditeur par défaut est contact@ascensionagency.fr) :
