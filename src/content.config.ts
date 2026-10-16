@@ -24,6 +24,7 @@ const articles = defineCollection({
     website: z.string().url().optional(),
     maps: z.string().url().optional(),
     sponsored: z.boolean().default(false),
+    featured: z.boolean().default(false), // adresse mise en avant (offre mensuelle)
   }),
 });
 

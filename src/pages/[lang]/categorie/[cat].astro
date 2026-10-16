@@ -12,7 +12,7 @@ const cat = Astro.params.cat as Category;
 const t = T[lang];
 const label = t.cats[cat];
 const title = t.inBrussels.replace('{cat}', label);
-const articles = (await getCollection('articles', a => a.id.startsWith(`${lang}/`) && a.data.category === cat)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const articles = (await getCollection('articles', a => a.id.startsWith(`${lang}/`) && a.data.category === cat)).sort((a, b) => Number(b.data.featured) - Number(a.data.featured) || b.data.date.valueOf() - a.data.date.valueOf());
 const slug = (id: string) => id.slice(3);
 ---
 <Base lang={lang} title={title} description={`${title} · ${t.rssDesc}`}>
@@ -21,7 +21,7 @@ const slug = (id: string) => id.slice(3);
   {articles.length === 0 && <p class="lead">{t.empty}</p>}
   <div class="cards">
     {articles.map(a => (
-      <a class:list={['card', { pic: !!a.data.image }]} href={`/${lang}/${slug(a.id)}/`}>
+      <a class:list={['card', { pic: !!a.data.image, featured: a.data.featured }]} href={`/${lang}/${slug(a.id)}/`}>
         {a.data.image && <Image class="thumb" src={a.data.image} alt="" width={480} height={360} format="webp" />}
         <div>
         <h3>{a.data.title}</h3>

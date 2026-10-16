@@ -6,7 +6,7 @@ import { LANG_CODES, T, type Lang } from '../../i18n';
 export function getStaticPaths() { return LANG_CODES.map(lang => ({ params: { lang } })); }
 const lang = Astro.params.lang as Lang;
 const t = T[lang];
-const articles = (await getCollection('articles', a => a.id.startsWith(`${lang}/`))).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const articles = (await getCollection('articles', a => a.id.startsWith(`${lang}/`))).sort((a, b) => Number(b.data.featured) - Number(a.data.featured) || b.data.date.valueOf() - a.data.date.valueOf());
 const slug = (id: string) => id.slice(3);
 const fmt = (d: Date) => d.toLocaleDateString(lang, { day: 'numeric', month: 'long', year: 'numeric' });
 ---
@@ -19,7 +19,7 @@ const fmt = (d: Date) => d.toLocaleDateString(lang, { day: 'numeric', month: 'lo
 
   <div class="cards">
     {articles.map(a => (
-      <a class:list={['card', { pic: !!a.data.image }]} href={`/${lang}/${slug(a.id)}/`}>
+      <a class:list={['card', { pic: !!a.data.image, featured: a.data.featured }]} href={`/${lang}/${slug(a.id)}/`}>
         {a.data.image && <Image class="thumb" src={a.data.image} alt="" width={480} height={360} format="webp" />}
         <div>
         <span class:list={['tag', a.data.category]}>{t.cats[a.data.category]}</span>

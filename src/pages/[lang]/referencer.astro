@@ -1,8 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
 import { PRO_LANGS, type Lang } from '../../i18n';
 export function getStaticPaths() { return PRO_LANGS.map(lang => ({ params: { lang } })); }
 const lang = Astro.params.lang as Lang;
+const n = (await getCollection('articles', a => a.id.startsWith('fr/'))).length;
 
 const P = {
   fr: {
@@ -12,6 +14,8 @@ const P = {
     o1: ['Article dédié', '150 €', 'Un article complet sur votre établissement, rédigé par nous et relu par vous, traduit en 15 langues. Lien vers votre site et Google Maps. En ligne pour toujours.'],
     o2: ['Pack visibilité', '390 €', 'Article dédié + mention dans 2 tops + 1 vidéo Reel tournée chez vous, publiée sur nos réseaux et livrée pour les vôtres.'],
     o3: ['Place dans un top', '90 €', 'Votre adresse ajoutée dans un de nos tops thématiques (« Top 10 des brunchs », « Top 5 sous la pluie »…), avec lien.'],
+    o4: ['Adresse mise en avant', '49 € / mois', 'Votre article en tête de la page d’accueil et de sa catégorie, avec une étoile sur la carte. Sans engagement, arrêt quand vous voulez.'],
+    stats: [`${n} adresses publiées`, '15 langues', 'Un nouvel article chaque jour'],
     how: 'Comment ça marche',
     steps: ["Vous nous écrivez avec le nom de l'établissement.", 'On vous envoie le texte sous 5 jours ouvrés, vous corrigez ce que vous voulez.', 'Publication, facture à 30 jours.'],
     note: "Les articles partenaires sont signalés comme tels. On ne publie pas d'avis inventés.",
@@ -25,6 +29,8 @@ const P = {
     o1: ['Eigen artikel', '150 €', 'Een volledig artikel over uw zaak, door ons geschreven en door u nagelezen, vertaald in 15 talen. Link naar uw website en Google Maps. Blijft voor altijd online.'],
     o2: ['Zichtbaarheidspakket', '390 €', 'Eigen artikel + vermelding in 2 tops + 1 Reel-video bij u opgenomen, gepubliceerd op onze kanalen en geleverd voor de uwe.'],
     o3: ['Plaats in een top', '90 €', "Uw adres toegevoegd aan een van onze thematische tops ('Top 10 brunches', 'Top 5 bij regen'…), met link."],
+    o4: ['Uitgelicht adres', '49 € / maand', 'Uw artikel bovenaan de homepage en zijn categorie, met een ster op de kaart. Zonder verbintenis, stoppen wanneer u wilt.'],
+    stats: [`${n} adressen gepubliceerd`, '15 talen', 'Elke dag een nieuw artikel'],
     how: 'Hoe werkt het',
     steps: ['U mailt ons de naam van uw zaak.', 'Binnen 5 werkdagen krijgt u de tekst, u past aan wat u wilt.', 'Publicatie, factuur op 30 dagen.'],
     note: 'Partnerartikelen worden als zodanig aangeduid. We publiceren geen verzonnen reviews.',
@@ -38,6 +44,8 @@ const P = {
     o1: ['Dedicated article', '€150', 'A full article about your venue, written by us and reviewed by you, translated into 15 languages. Links to your website and Google Maps. Online forever.'],
     o2: ['Visibility pack', '€390', 'Dedicated article + mention in 2 top lists + 1 Reel video shot at your venue, published on our channels and delivered for yours.'],
     o3: ['Spot in a top list', '€90', "Your venue added to one of our themed top lists ('Top 10 brunches', 'Top 5 rainy-day outings'…), with a link."],
+    o4: ['Featured venue', '€49 / month', 'Your article at the top of the homepage and its category, with a star on the card. No commitment, cancel anytime.'],
+    stats: [`${n} venues published`, '15 languages', 'A new article every day'],
     how: 'How it works',
     steps: ['Email us the name of your venue.', 'We send you the text within 5 working days, you change whatever you like.', 'Publication, invoice at 30 days.'],
     note: 'Partner articles are labelled as such. We never publish made-up reviews.',
@@ -51,10 +59,11 @@ const mail = 'mailto:contact@ascensionagency.fr?subject=' + encodeURIComponent(P
   <span class="tag tops">{P.tag}</span>
   <h1>{P.h1}</h1>
   <p class="lead">{P.lead}</p>
+  <p class="meta">{P.stats.join(' · ')}</p>
 
   <h2>{P.offers}</h2>
   <div class="offres">
-    {[P.o1, P.o2, P.o3].map(([h, price, text], i) => (
+    {[P.o1, P.o2, P.o3, P.o4].map(([h, price, text], i) => (
       <div class:list={['offre', { star: i === 1 }]}>
         <h3>{h}</h3>
         <div class="prix">{price} <small>{P.htva}</small></div>
