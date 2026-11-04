@@ -18,11 +18,11 @@ El búlder combina fuerza, equilibrio y coordinación, pero sobre todo cabeza: c
 
 No hace falta tomar clase para empezar; el equipo aconseja con gusto en la primera sesión. Quien quiera aprender los buenos reflejos (caer, colocar los pies, leer un bloque) puede reservar una clase de iniciación de 1h30 y seguir con ciclos de cuatro clases o cursos anuales. Después de escalar, en la barra hay algo para picar: croques, ensaladas, galletas, fruta y, los miércoles, noche de pizza a partir de las 18:30.
 
-Le Camp de Base tiene dos hermanas pequeñas en Ixelles: Le Camp d'approche (rue du Vivier 53), una sala de iniciación pensada para niños y familias, y Le Camp avancé (rue de Theux 107), dedicada al entrenamiento de escaladores experimentados.
+Le Camp de Base tiene dos hermanas pequeñas en Ixelles: Le Camp d'Approche (rue du Vivier 53), una sala de iniciación pensada para quienes empiezan, los niños y las familias, y justo al lado Le Camp Avancé (rue de Theux 107), dedicada a la progresión y el entrenamiento.
 
 ## Para quién
 
-Curiosos que quieren probar un deporte sin material complicado, amigos que buscan un plan activo después del trabajo, escaladores habituales que quieren progresar. La sala no admite a menores de 12 años: para ellos está Le Camp d'approche. Los jóvenes de 12 a 16 años vienen acompañados o solos con autorización de sus padres.
+Curiosos que quieren probar un deporte sin material complicado, amigos que buscan un plan activo después del trabajo, escaladores habituales que quieren progresar. La sala no admite a menores de 12 años: para ellos está Le Camp d'Approche. Los jóvenes de 12 a 16 años vienen acompañados o solos con autorización de sus padres.
 
 ## Información práctica
 

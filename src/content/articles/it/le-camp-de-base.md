@@ -18,11 +18,11 @@ Il boulder unisce forza, equilibrio e coordinazione, ma soprattutto testa: ogni 
 
 Non serve un corso per iniziare: lo staff dà volentieri consigli alla prima sessione. Chi vuole imparare i riflessi giusti (cadere, posizionare i piedi, leggere un blocco) può prenotare un corso di prova di 1h30 e proseguire con cicli di quattro lezioni o corsi annuali. Dopo l'arrampicata, al bancone c'è qualcosa da sgranocchiare: toast, insalate, biscotti, frutta e il mercoledì serata pizza dalle 18:30.
 
-Le Camp de Base ha due sorelle minori a Ixelles: Le Camp d'approche (rue du Vivier 53), una sala di avviamento pensata per bambini e famiglie, e Le Camp avancé (rue de Theux 107), dedicata all'allenamento degli arrampicatori esperti.
+Le Camp de Base ha due sorelle minori a Ixelles: Le Camp d'Approche (rue du Vivier 53), una sala di avviamento pensata per chi inizia, i bambini e le famiglie, e subito accanto Le Camp Avancé (rue de Theux 107), dedicata alla progressione e all'allenamento.
 
 ## Per chi
 
-I curiosi che vogliono provare uno sport senza attrezzatura complicata, gli amici in cerca di un'uscita attiva dopo il lavoro, gli arrampicatori abituali che vogliono migliorare. La sala non è accessibile ai minori di 12 anni: per loro c'è Le Camp d'approche. I ragazzi dai 12 ai 16 anni vengono accompagnati o da soli con l'autorizzazione dei genitori.
+I curiosi che vogliono provare uno sport senza attrezzatura complicata, gli amici in cerca di un'uscita attiva dopo il lavoro, gli arrampicatori abituali che vogliono migliorare. La sala non è accessibile ai minori di 12 anni: per loro c'è Le Camp d'Approche. I ragazzi dai 12 ai 16 anni vengono accompagnati o da soli con l'autorizzazione dei genitori.
 
 ## Informazioni pratiche
 

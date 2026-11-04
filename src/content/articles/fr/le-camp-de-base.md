@@ -18,11 +18,11 @@ Le bloc mélange force, équilibre et coordination, mais surtout réflexion : ch
 
 Pas besoin de cours pour commencer, l'équipe conseille volontiers lors d'une première séance. Ceux qui veulent apprendre les bons réflexes (chute, placement des pieds, lecture d'un passage) peuvent réserver un cours découverte de 1h30, puis enchaîner avec des cycles de quatre cours ou des cours à l'année. Après la séance, le coin bar propose de quoi grignoter : croques, salades, cookies, fruits, et une soirée pizza le mercredi à partir de 18h30.
 
-Le Camp de Base a deux petites sœurs à Ixelles : le Camp d'approche (rue du Vivier 53), une salle d'initiation pensée pour les enfants et les familles, et le Camp avancé (rue de Theux 107), dédié à l'entraînement des grimpeurs confirmés.
+Le Camp de Base a deux petites sœurs à Ixelles : le Camp d'Approche (rue du Vivier 53), une salle d'initiation pensée pour les gens qui débutent, les enfants et les familles, et juste à côté le Camp Avancé (rue de Theux 107), dédié à la progression et à l'entraînement.
 
 ## Pour qui
 
-Les curieux qui veulent tester un sport sans matériel compliqué, les amis qui cherchent une sortie active après le travail, les grimpeurs réguliers qui veulent progresser. La salle n'est pas accessible aux moins de 12 ans : pour eux, direction le Camp d'approche. Les 12-16 ans viennent accompagnés ou en autonomie avec une autorisation parentale.
+Les curieux qui veulent tester un sport sans matériel compliqué, les amis qui cherchent une sortie active après le travail, les grimpeurs réguliers qui veulent progresser. La salle n'est pas accessible aux moins de 12 ans : pour eux, direction le Camp d'Approche. Les 12-16 ans viennent accompagnés ou en autonomie avec une autorisation parentale.
 
 ## Infos pratiques
 

@@ -18,11 +18,11 @@ Boulderingul combină forța, echilibrul și coordonarea, dar mai ales gândirea
 
 Nu e nevoie de curs ca să începi; echipa dă cu plăcere sfaturi la prima sesiune. Cine vrea să învețe reflexele corecte (căderea, așezarea picioarelor, citirea unui traseu) poate rezerva un curs de inițiere de 1h30, apoi poate continua cu cicluri de patru cursuri sau cursuri pe tot anul. După cățărare, la bar găsești ceva de ronțăit: croque-uri, salate, fursecuri, fructe, iar miercurea seară de pizza de la 18:30.
 
-Le Camp de Base are două surori mai mici în Ixelles: Le Camp d'approche (rue du Vivier 53), o sală de inițiere gândită pentru copii și familii, și Le Camp avancé (rue de Theux 107), dedicată antrenamentului cățărătorilor experimentați.
+Le Camp de Base are două surori mai mici în Ixelles: Le Camp d'Approche (rue du Vivier 53), o sală de inițiere gândită pentru începători, copii și familii, și chiar alături Le Camp Avancé (rue de Theux 107), dedicată progresului și antrenamentului.
 
 ## Pentru cine
 
-Curioșii care vor să încerce un sport fără echipament complicat, prietenii care caută o ieșire activă după serviciu, cățărătorii obișnuiți care vor să progreseze. Sala nu este accesibilă copiilor sub 12 ani: pentru ei există Le Camp d'approche. Tinerii între 12 și 16 ani vin însoțiți sau singuri, cu acordul părinților.
+Curioșii care vor să încerce un sport fără echipament complicat, prietenii care caută o ieșire activă după serviciu, cățărătorii obișnuiți care vor să progreseze. Sala nu este accesibilă copiilor sub 12 ani: pentru ei există Le Camp d'Approche. Tinerii între 12 și 16 ani vin însoțiți sau singuri, cu acordul părinților.
 
 ## Informații practice
 

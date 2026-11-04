@@ -18,11 +18,11 @@ Boulderen combineert kracht, evenwicht en coördinatie, maar vooral denkwerk: el
 
 Je hebt geen les nodig om te beginnen; het team geeft graag advies bij een eerste sessie. Wie de juiste reflexen wil leren (vallen, voetplaatsing, een route lezen) kan een kennismakingsles van 1u30 boeken en daarna doorgaan met reeksen van vier lessen of jaarlessen. Na de sessie vind je aan de bar iets om te eten: croques, salades, cookies, fruit, en op woensdag een pizza-avond vanaf 18u30.
 
-Le Camp de Base heeft twee kleine zusjes in Elsene: Le Camp d'approche (rue du Vivier 53), een initiatiezaal voor kinderen en gezinnen, en Le Camp avancé (rue de Theux 107), gericht op training voor ervaren klimmers.
+Le Camp de Base heeft twee kleine zusjes in Elsene: Le Camp d'Approche (rue du Vivier 53), een initiatiezaal voor beginners, kinderen en gezinnen, en vlak daarnaast Le Camp Avancé (rue de Theux 107), gericht op vooruitgang en training.
 
 ## Voor wie
 
-Nieuwsgierigen die een sport willen proberen zonder ingewikkeld materiaal, vrienden die na het werk iets actiefs zoeken, vaste klimmers die beter willen worden. De zaal is niet toegankelijk voor kinderen onder 12 jaar: zij kunnen terecht in Le Camp d'approche. Jongeren van 12 tot 16 komen onder begeleiding, of zelfstandig met ouderlijke toestemming.
+Nieuwsgierigen die een sport willen proberen zonder ingewikkeld materiaal, vrienden die na het werk iets actiefs zoeken, vaste klimmers die beter willen worden. De zaal is niet toegankelijk voor kinderen onder 12 jaar: zij kunnen terecht in Le Camp d'Approche. Jongeren van 12 tot 16 komen onder begeleiding, of zelfstandig met ouderlijke toestemming.
 
 ## Praktische info
 

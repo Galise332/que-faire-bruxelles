@@ -18,11 +18,11 @@ Bouldering kuvveti, dengeyi ve koordinasyonu birleştirir, ama en çok da düş�
 
 Başlamak için ders almak gerekmiyor; ekip ilk seansınızda memnuniyetle tavsiye veriyor. Doğru refleksleri (düşmek, ayak yerleşimi, rotayı okumak) öğrenmek isteyenler 1,5 saatlik bir tanışma dersi ayırtabilir, ardından dört derslik döngülerle ya da yıllık kurslarla devam edebilir. Tırmanıştan sonra bar köşesinde atıştıracak bir şeyler var: tost, salata, kurabiye, meyve; çarşamba günleri de 18.30'dan itibaren pizza akşamı.
 
-Le Camp de Base'in Ixelles'de iki küçük kardeşi var: çocuklar ve aileler için tasarlanmış bir başlangıç salonu olan Le Camp d'approche (rue du Vivier 53) ve deneyimli tırmanıcıların antrenmanına ayrılmış Le Camp avancé (rue de Theux 107).
+Le Camp de Base'in Ixelles'de iki küçük kardeşi var: yeni başlayanlar, çocuklar ve aileler için tasarlanmış bir başlangıç salonu olan Le Camp d'Approche (rue du Vivier 53) ve hemen yanında, gelişime ve antrenmana ayrılmış Le Camp Avancé (rue de Theux 107).
 
 ## Kimler için
 
-Karmaşık ekipman gerektirmeyen bir sporu denemek isteyen meraklılar, iş çıkışı hareketli bir program arayan arkadaş grupları, gelişmek isteyen düzenli tırmanıcılar. Salon 12 yaşından küçük çocuklara açık değil: onlar için Le Camp d'approche var. 12-16 yaş arası gençler bir refakatçiyle ya da veli izniyle tek başlarına gelebilir.
+Karmaşık ekipman gerektirmeyen bir sporu denemek isteyen meraklılar, iş çıkışı hareketli bir program arayan arkadaş grupları, gelişmek isteyen düzenli tırmanıcılar. Salon 12 yaşından küçük çocuklara açık değil: onlar için Le Camp d'Approche var. 12-16 yaş arası gençler bir refakatçiyle ya da veli izniyle tek başlarına gelebilir.
 
 ## Pratik bilgiler
 

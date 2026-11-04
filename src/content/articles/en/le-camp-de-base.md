@@ -18,11 +18,11 @@ Bouldering mixes strength, balance and coordination, but above all thinking: eve
 
 You don't need a class to start; the staff are happy to give advice on your first session. If you want to learn the right reflexes (falling, foot placement, reading a problem), you can book a 1h30 intro class, then move on to four-session courses or year-long classes. After climbing, the bar corner has something to nibble: toasties, salads, cookies, fruit, and a pizza night on Wednesdays from 6:30 pm.
 
-Le Camp de Base has two little sisters in Ixelles: Le Camp d'approche (rue du Vivier 53), an introductory gym designed for children and families, and Le Camp avancé (rue de Theux 107), dedicated to training for experienced climbers.
+Le Camp de Base has two little sisters in Ixelles: Le Camp d'Approche (rue du Vivier 53), an introductory gym designed for beginners, children and families, and right next to it Le Camp Avancé (rue de Theux 107), dedicated to progression and training.
 
 ## Who it's for
 
-Curious people who want to try a sport without complicated gear, friends looking for an active after-work outing, regular climbers who want to progress. The gym is not open to under-12s: they head to Le Camp d'approche instead. 12- to 16-year-olds come with an adult, or on their own with parental permission.
+Curious people who want to try a sport without complicated gear, friends looking for an active after-work outing, regular climbers who want to progress. The gym is not open to under-12s: they head to Le Camp d'Approche instead. 12- to 16-year-olds come with an adult, or on their own with parental permission.
 
 ## Practical info
 

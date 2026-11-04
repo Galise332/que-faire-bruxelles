@@ -18,11 +18,11 @@ Bouldern verbindet Kraft, Gleichgewicht und Koordination, vor allem aber Köpfch
 
 Für den Einstieg braucht man keinen Kurs; das Team berät beim ersten Besuch gern. Wer die richtigen Reflexe lernen will (Fallen, Fußtechnik, Routen lesen), bucht einen 1,5-stündigen Schnupperkurs und macht dann mit Kursreihen zu vier Terminen oder Jahreskursen weiter. Nach dem Klettern gibt es an der Bar etwas zu essen: Croques, Salate, Cookies, Obst und mittwochs ab 18:30 Uhr einen Pizzaabend.
 
-Le Camp de Base hat zwei kleine Schwestern in Ixelles: Le Camp d'approche (rue du Vivier 53), eine Einsteigerhalle für Kinder und Familien, und Le Camp avancé (rue de Theux 107), die sich dem Training erfahrener Kletterer widmet.
+Le Camp de Base hat zwei kleine Schwestern in Ixelles: Le Camp d'Approche (rue du Vivier 53), eine Einsteigerhalle für Anfänger, Kinder und Familien, und gleich daneben Le Camp Avancé (rue de Theux 107), die sich dem Fortschritt und dem Training widmet.
 
 ## Für wen
 
-Neugierige, die einen Sport ohne komplizierte Ausrüstung ausprobieren wollen, Freunde auf der Suche nach einem aktiven Feierabend, regelmäßige Kletterer, die sich verbessern wollen. Kinder unter 12 Jahren haben keinen Zutritt: Für sie gibt es Le Camp d'approche. 12- bis 16-Jährige kommen in Begleitung oder allein mit Einverständnis der Eltern.
+Neugierige, die einen Sport ohne komplizierte Ausrüstung ausprobieren wollen, Freunde auf der Suche nach einem aktiven Feierabend, regelmäßige Kletterer, die sich verbessern wollen. Kinder unter 12 Jahren haben keinen Zutritt: Für sie gibt es Le Camp d'Approche. 12- bis 16-Jährige kommen in Begleitung oder allein mit Einverständnis der Eltern.
 
 ## Praktische Infos
 

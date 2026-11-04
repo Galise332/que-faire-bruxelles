@@ -18,11 +18,11 @@ O bouldering junta força, equilíbrio e coordenação, mas sobretudo cabeça: c
 
 Não é preciso ter aula para começar; a equipa aconselha de bom grado na primeira sessão. Quem quiser aprender os reflexos certos (cair, colocar os pés, ler um bloco) pode reservar uma aula de iniciação de 1h30 e continuar com ciclos de quatro aulas ou cursos anuais. Depois da escalada, no bar há algo para petiscar: tostas, saladas, bolachas, fruta e, às quartas-feiras, noite de pizza a partir das 18h30.
 
-O Le Camp de Base tem duas irmãs mais novas em Ixelles: o Le Camp d'approche (rue du Vivier 53), uma sala de iniciação pensada para crianças e famílias, e o Le Camp avancé (rue de Theux 107), dedicado ao treino de escaladores experientes.
+O Le Camp de Base tem duas irmãs mais novas em Ixelles: o Le Camp d'Approche (rue du Vivier 53), uma sala de iniciação pensada para quem está a começar, crianças e famílias, e mesmo ao lado o Le Camp Avancé (rue de Theux 107), dedicado à progressão e ao treino.
 
 ## Para quem
 
-Curiosos que querem experimentar um desporto sem material complicado, amigos à procura de um programa ativo depois do trabalho, escaladores habituais que querem evoluir. A sala não é acessível a menores de 12 anos: para eles existe o Le Camp d'approche. Os jovens dos 12 aos 16 anos vêm acompanhados ou sozinhos com autorização dos pais.
+Curiosos que querem experimentar um desporto sem material complicado, amigos à procura de um programa ativo depois do trabalho, escaladores habituais que querem evoluir. A sala não é acessível a menores de 12 anos: para eles existe o Le Camp d'Approche. Os jovens dos 12 aos 16 anos vêm acompanhados ou sozinhos com autorização dos pais.
 
 ## Informações práticas
 

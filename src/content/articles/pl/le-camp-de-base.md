@@ -18,11 +18,11 @@ Bouldering łączy siłę, równowagę i koordynację, ale przede wszystkim myś
 
 Na początek nie trzeba żadnego kursu; obsługa chętnie doradzi przy pierwszej wizycie. Kto chce nauczyć się dobrych nawyków (spadanie, stawianie stóp, czytanie problemu), może zarezerwować 1,5-godzinne zajęcia wprowadzające, a potem kontynuować w cyklach po cztery zajęcia lub na kursach całorocznych. Po wspinaczce przy barze można coś przekąsić: tosty, sałatki, ciastka, owoce, a w środy od 18:30 jest wieczór pizzy.
 
-Le Camp de Base ma w Ixelles dwie młodsze siostry: Le Camp d'approche (rue du Vivier 53), salę wprowadzającą dla dzieci i rodzin, oraz Le Camp avancé (rue de Theux 107), przeznaczoną do treningu doświadczonych wspinaczy.
+Le Camp de Base ma w Ixelles dwie młodsze siostry: Le Camp d'Approche (rue du Vivier 53), salę wprowadzającą dla początkujących, dzieci i rodzin, oraz tuż obok Le Camp Avancé (rue de Theux 107), przeznaczoną do robienia postępów i treningu.
 
 ## Dla kogo
 
-Dla ciekawych, którzy chcą spróbować sportu bez skomplikowanego sprzętu, dla znajomych szukających aktywnego wyjścia po pracy, dla stałych bywalców, którzy chcą się rozwijać. Sala nie jest dostępna dla dzieci poniżej 12 lat: dla nich jest Le Camp d'approche. Młodzież w wieku 12-16 lat przychodzi z opiekunem albo samodzielnie, ze zgodą rodziców.
+Dla ciekawych, którzy chcą spróbować sportu bez skomplikowanego sprzętu, dla znajomych szukających aktywnego wyjścia po pracy, dla stałych bywalców, którzy chcą się rozwijać. Sala nie jest dostępna dla dzieci poniżej 12 lat: dla nich jest Le Camp d'Approche. Młodzież w wieku 12-16 lat przychodzi z opiekunem albo samodzielnie, ze zgodą rodziców.
 
 ## Informacje praktyczne
 
