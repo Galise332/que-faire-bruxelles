@@ -1,6 +1,6 @@
 ---
 title: "WIELS: arte contemporáneo en la antigua cervecería Wielemans de 1930, en Forest"
-description: "Un centro de arte contemporáneo instalado en el edificio Blomme, buque insignia de las cervecerías Wielemans. Exposiciones, café en la sala de cocción y librería, a 20 minutos a pie de la estación Midi."
+description: "Un centro de arte contemporáneo instalado en el edificio Blomme, buque insignia de las cervecerías Wielemans. Exposiciones, café en la sala de cocción y librería, a 20 minutos a pie del Midi."
 date: 2026-11-17
 category: activites
 address: "Avenue Van Volxem 354, 1190 Forest"

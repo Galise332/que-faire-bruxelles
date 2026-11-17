@@ -1,6 +1,6 @@
 ---
 title: "WIELS: hedendaagse kunst in de voormalige brouwerij Wielemans uit 1930, in Vorst"
-description: "Een centrum voor hedendaagse kunst in het Blomme-gebouw, het paradepaardje van de brouwerijen Wielemans. Tentoonstellingen, café in de brouwzaal en boekhandel, op 20 minuten wandelen van het Zuidstation."
+description: "Een centrum voor hedendaagse kunst in het Blomme-gebouw, het paradepaardje van de brouwerijen Wielemans. Tentoonstellingen, café in de brouwzaal en boekhandel, op 20 minuten wandelen van Brussel-Zuid."
 date: 2026-11-17
 category: activites
 address: "Avenue Van Volxem 354, 1190 Forest"
