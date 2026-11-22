@@ -1,6 +1,6 @@
 ---
 title: "Palais du Coudenberg: sotto la Place Royale, i resti del palazzo di Carlo V"
-description: "Sotto la Place Royale si nascondono le cantine del palazzo dove visse Carlo V, distrutto da un incendio nel 1731. Una visita sotterranea di circa un'ora, un'ora e mezza, gratuita per i minori di 18 anni."
+description: "Sotto la Place Royale si nascondono le cantine del palazzo dove visse Carlo V, distrutto da un incendio nel 1731. Una visita sotterranea di circa 1-1,5 ore, gratuita per i minori di 18 anni."
 date: 2026-11-22
 category: activites
 address: "Place des Palais 7, 1000 Bruxelles"

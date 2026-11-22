@@ -1,6 +1,6 @@
 ---
 title: "Palatul Coudenberg: sub place Royale, vestigiile palatului lui Carol Quintul"
-description: "Sub place Royale se află pivnițele palatului în care a locuit Carol Quintul, distrus de un incendiu în 1731. O vizită subterană de aproximativ 1 oră până la 1 oră și jumătate, gratuită pentru cei sub 18 ani."
+description: "Sub place Royale se află pivnițele palatului în care a locuit Carol Quintul, distrus de un incendiu în 1731. O vizită subterană de 1-1,5 ore, gratuită pentru cei sub 18 ani."
 date: 2026-11-22
 category: activites
 address: "Place des Palais 7, 1000 Bruxelles"

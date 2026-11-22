@@ -1,6 +1,6 @@
 ---
 title: "Palais du Coudenberg: unter der Place Royale, die Überreste des Palasts Karls V."
-description: "Unter der Place Royale liegen die Keller des Palasts, in dem Karl V. lebte und der 1731 bei einem Brand zerstört wurde. Ein unterirdischer Rundgang von etwa 1 bis 1,5 Stunden, gratis für unter 18-Jährige."
+description: "Unter der Place Royale liegen die Keller des Palasts Karls V., der 1731 abbrannte. Ein unterirdischer Rundgang von etwa 1 bis 1,5 Stunden, gratis für unter 18-Jährige."
 date: 2026-11-22
 category: activites
 address: "Place des Palais 7, 1000 Bruxelles"

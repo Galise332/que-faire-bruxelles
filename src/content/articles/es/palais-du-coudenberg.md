@@ -1,6 +1,6 @@
 ---
 title: "Palais du Coudenberg: bajo la Place Royale, los vestigios del palacio de Carlos V"
-description: "Bajo la Place Royale se esconden los sótanos del palacio donde vivió Carlos V, destruido por un incendio en 1731. Una visita subterránea de entre 1 hora y 1 hora y media, gratuita para menores de 18 años."
+description: "Bajo la Place Royale se esconden los sótanos del palacio donde vivió Carlos V, destruido por un incendio en 1731. Una visita subterránea de 1 a 1,5 horas, gratuita para menores de 18 años."
 date: 2026-11-22
 category: activites
 address: "Place des Palais 7, 1000 Bruxelles"
